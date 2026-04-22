@@ -2,26 +2,116 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  cursor: none;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F8F7F4;
+  color: #191A1C;
+  font-family: var(--font-cormorant), serif;
+  overflow-x: hidden;
+}
+
+a, button, [role="button"] {
+  cursor: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #F0EFEB;
+}
+::-webkit-scrollbar-thumb {
+  background: #00687960;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #006879;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-teal-glow {
+    text-shadow: 0 2px 12px rgba(0,104,121,0.3);
+  }
+  .border-teal-glow {
+    box-shadow: 0 4px 20px rgba(0,104,121,0.15);
+  }
+  .subtle-grid {
+    background-image:
+      linear-gradient(rgba(0,104,121,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,104,121,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .dot-matrix {
+    background-image: radial-gradient(rgba(0,104,121,0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .diagonal-lines {
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(0,104,121,0.03) 0px,
+      rgba(0,104,121,0.03) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  }
+  .hex-grid {
+    background-image: radial-gradient(rgba(0,104,121,0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  .grid-overlay {
+    background-image:
+      linear-gradient(rgba(0,104,121,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,104,121,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+.section-label {
+  font-family: var(--font-jost), sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #006879;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.btn-teal-fill {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.btn-teal-fill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #006879;
+  transform: translateX(-101%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+.btn-teal-fill:hover::before {
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  html, a, button, [role="button"] {
+    cursor: auto;
   }
 }
