@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import FloatingPortrait from "@/components/ui/FloatingPortrait";
+import Image from "next/image";
 
 function ElegantBackground() {
   return (
@@ -133,18 +133,25 @@ export default function Hero() {
 
           {/* Right: floating portrait */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.25, duration: 1.1, ease: "easeOut" }}
-            className="hidden lg:block"
-            style={{ height: "78vh" }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 1.0, ease: "easeOut" }}
+            className="hidden lg:flex items-end justify-center relative"
+            style={{ height: "82vh" }}
           >
-            <FloatingPortrait
-              src="/asim.png"
-              alt="Muhammad Asim Saleem"
-              threshold={40}
-              feather={75}
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src="/asim.png"
+                alt="Muhammad Asim Saleem"
+                fill
+                priority
+                className="object-contain object-bottom"
+                style={{
+                  filter:
+                    "contrast(1.06) brightness(1.04) saturate(0.92) drop-shadow(0 24px 64px rgba(0,104,121,0.13))",
+                }}
+              />
+            </div>
           </motion.div>
 
         </div>
