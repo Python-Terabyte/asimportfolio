@@ -27,7 +27,7 @@ export default function About() {
             </SectionReveal>
 
             <SectionReveal delay={0.1}>
-              <div className="space-y-5 font-cormorant text-lg text-ink/60 leading-relaxed mb-8">
+              <div className="space-y-5 font-cormorant text-lg text-ink/90 leading-relaxed mb-8">
                 <p>
                   I joined Metric in 2022 as an accounts analyst. Within two years, I was
                   designing the BI infrastructure those reports depended on, not because I was

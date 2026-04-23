@@ -45,10 +45,10 @@ export default function Experience() {
 
                 {/* Left: meta */}
                 <div className="mb-3 md:mb-0 md:text-right md:pr-10">
-                  <div className="font-mono text-xs text-ink/35 mb-2 leading-relaxed">
+                  <div className="font-mono text-xs text-ink/70 mb-2 leading-relaxed">
                     {role.period}
                   </div>
-                  <div className="font-cormorant text-base font-medium text-ink/70">
+                  <div className="font-cormorant text-base font-semibold text-ink/95">
                     {role.companyUrl ? (
                       <a
                         href={role.companyUrl}
@@ -72,7 +72,7 @@ export default function Experience() {
                   </h3>
                   <ul className="space-y-2">
                     {role.bullets.map((bullet, j) => (
-                      <li key={j} className="flex gap-3 font-cormorant text-base text-ink/55 leading-relaxed">
+                      <li key={j} className="flex gap-3 font-cormorant text-base text-ink/90 leading-relaxed">
                         <span className="text-teal/60 mt-1.5 shrink-0">›</span>
                         {bullet}
                       </li>

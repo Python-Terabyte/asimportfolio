@@ -34,7 +34,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="font-jost font-light text-sm text-ink/60 hover:text-teal transition-colors duration-200 tracking-widest uppercase"
+                className="font-jost font-medium text-sm text-ink/90 hover:text-teal transition-colors duration-200 tracking-widest uppercase"
               >
                 {link.label}
               </a>
@@ -46,7 +46,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <a
             href="#contact"
-            className="btn-teal-fill px-5 py-2 border border-teal text-teal text-sm font-jost font-light tracking-widest uppercase hover:text-white transition-colors duration-300"
+            className="btn-teal-fill px-5 py-2 border border-teal text-teal text-sm font-jost font-medium tracking-widest uppercase hover:text-white transition-colors duration-300"
           >
             Hire Me
           </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
 
         {/* Hamburger */}
         <button
-          className="md:hidden text-ink/70 hover:text-teal transition-colors"
+          className="md:hidden text-ink hover:text-teal transition-colors"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -76,7 +76,7 @@ export default function Navbar() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="block font-jost font-light text-sm text-ink/70 hover:text-teal transition-colors py-1 tracking-widest uppercase"
+                    className="block font-jost font-medium text-sm text-ink/90 hover:text-teal transition-colors py-1 tracking-widest uppercase"
                     onClick={() => setOpen(false)}
                   >
                     {link.label}

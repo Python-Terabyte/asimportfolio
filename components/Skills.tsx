@@ -45,7 +45,7 @@ export default function Skills() {
                   <div className="p-2 border border-teal/20 bg-teal/5 group-hover:border-teal/40 transition-all duration-300">
                     {Icon && <Icon size={18} className="text-teal" />}
                   </div>
-                  <h3 className="font-jost font-light text-sm text-ink group-hover:text-teal transition-colors duration-300 uppercase tracking-wider">
+                  <h3 className="font-jost font-semibold text-sm text-ink group-hover:text-teal transition-colors duration-300 uppercase tracking-wider">
                     {skill.name}
                   </h3>
                 </div>
@@ -53,7 +53,7 @@ export default function Skills() {
                   {skill.items.map((item) => (
                     <span
                       key={item}
-                      className="font-mono text-xs px-2.5 py-1 bg-ink/4 text-ink/50 border border-ink/8 hover:border-teal/30 hover:text-ink/80 transition-all duration-200"
+                      className="font-mono text-xs px-2.5 py-1 bg-ink/4 text-ink/85 border border-ink/15 hover:border-teal/40 hover:text-ink transition-all duration-200"
                     >
                       {item}
                     </span>

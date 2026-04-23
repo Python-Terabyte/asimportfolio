@@ -59,13 +59,13 @@ export default function Hero() {
               className="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-teal/20 bg-white/70 backdrop-blur-sm"
             >
               <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
-              <span className="font-mono text-xs text-ink/60 tracking-widest">
+              <span className="font-mono text-xs text-ink/90 tracking-widest">
                 BI Architect · Fintech Strategist · ACMA · Available for Consulting
               </span>
             </FadeUp>
 
             <FadeUp delay={0.12} className="mb-5">
-              <h1 className="font-jost font-light text-2xl md:text-3xl text-ink/50 tracking-wide uppercase">
+              <h1 className="font-jost font-normal text-2xl md:text-3xl text-ink/90 tracking-wide uppercase">
                 Muhammad Asim Saleem
               </h1>
             </FadeUp>
@@ -107,11 +107,11 @@ export default function Hero() {
             </FadeUp>
 
             <FadeUp delay={0.5}>
-              <p className="font-cormorant text-lg md:text-xl text-ink/55 mb-10 max-w-2xl leading-relaxed">
+              <p className="font-cormorant text-lg md:text-xl text-ink/85 mb-10 max-w-2xl leading-relaxed">
                 Senior Business Analyst, BI Architect, and Fintech Product Leader with 5+ years
                 building data infrastructure from scratch. Behind a platform processing{" "}
-                <span className="text-ink/80 font-medium">$4.2B in transactions</span> across{" "}
-                <span className="text-ink/80 font-medium">190+ countries</span>.
+                <span className="text-ink font-semibold">$4.2B in transactions</span> across{" "}
+                <span className="text-ink font-semibold">190+ countries</span>.
               </p>
             </FadeUp>
 

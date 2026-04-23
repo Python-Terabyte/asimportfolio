@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="font-jost font-light text-2xl text-white tracking-[0.15em] uppercase mb-1">
               MAS<span className="text-teal-light">.</span>
             </div>
-            <p className="font-cormorant text-base text-white/40">
+            <p className="font-cormorant text-base text-white/75">
               BI Architect · Fintech Strategist · ACMA
             </p>
           </div>
@@ -19,7 +19,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="font-jost font-light text-xs text-white/40 hover:text-teal-light transition-colors tracking-widest uppercase"
+                    className="font-jost font-medium text-xs text-white/75 hover:text-teal-light transition-colors tracking-widest uppercase"
                   >
                     {link.label}
                   </a>
@@ -29,10 +29,10 @@ export default function Footer() {
           </nav>
         </div>
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-          <p className="font-mono text-xs text-white/25">
+          <p className="font-mono text-xs text-white/65">
             © 2026 Muhammad Asim Saleem · ACMA · BI Architect · Available Globally
           </p>
-          <p className="font-mono text-xs text-white/20">
+          <p className="font-mono text-xs text-white/60">
             Islamabad, Pakistan · Open to Remote & Relocation
           </p>
         </div>

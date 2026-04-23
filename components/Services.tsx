@@ -32,7 +32,7 @@ export default function Services() {
               What I Can<br />
               <span className="text-teal text-teal-glow italic font-cormorant font-semibold normal-case">Build for You</span>
             </h2>
-            <p className="font-cormorant text-lg text-ink/50 max-w-sm">
+            <p className="font-cormorant text-lg text-ink/85 max-w-sm">
               Available for project-based, retainer, and advisory engagements.
               Remote globally. Open to relocation.
             </p>
@@ -56,10 +56,10 @@ export default function Services() {
                   </div>
                 </div>
 
-                <h3 className="font-jost font-light text-base text-ink mb-3 leading-snug group-hover:text-teal transition-colors duration-300 uppercase tracking-wider">
+                <h3 className="font-jost font-semibold text-base text-ink mb-3 leading-snug group-hover:text-teal transition-colors duration-300 uppercase tracking-wider">
                   {service.title}
                 </h3>
-                <p className="font-cormorant text-base text-ink/55 leading-relaxed mb-5">
+                <p className="font-cormorant text-base text-ink/90 leading-relaxed mb-5">
                   {service.description}
                 </p>
 
@@ -67,7 +67,7 @@ export default function Services() {
                   {service.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="font-mono text-xs px-2.5 py-1 border border-ink/10 text-ink/40"
+                      className="font-mono text-xs px-2.5 py-1 border border-ink/20 text-ink/75"
                     >
                       {tag}
                     </span>
@@ -92,7 +92,7 @@ export default function Services() {
           <div className="mt-12 p-6 border border-teal/20 bg-teal/5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <p className="font-jost font-light text-ink mb-1 tracking-wide uppercase text-sm">Not sure which fits?</p>
-              <p className="font-cormorant text-base text-ink/50">
+              <p className="font-cormorant text-base text-ink/85">
                 Tell me your challenge. I&apos;ll tell you how I can help.
               </p>
             </div>

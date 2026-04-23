@@ -88,7 +88,7 @@ export default function Contact() {
                 Let&apos;s Build<br />
                 <span className="text-teal text-teal-glow italic font-cormorant font-semibold normal-case">Something Real</span>
               </h2>
-              <p className="font-cormorant text-lg text-ink/55 mb-8 leading-relaxed">
+              <p className="font-cormorant text-lg text-ink/90 mb-8 leading-relaxed">
                 Open to freelance consulting, retainers, global remote, and relocation.
                 If you&apos;re building something that needs real financial intelligence, let&apos;s talk.
               </p>
@@ -103,7 +103,7 @@ export default function Contact() {
                   <div className="p-2 border border-teal/20 bg-teal/5">
                     <Mail size={16} className="text-teal" />
                   </div>
-                  <span className="font-cormorant text-base text-ink/70 group-hover:text-teal transition-colors">
+                  <span className="font-cormorant text-base text-ink/95 group-hover:text-teal transition-colors">
                     asimsaleem.net@gmail.com
                   </span>
                 </a>
@@ -114,7 +114,7 @@ export default function Contact() {
                   <div className="p-2 border border-teal/20 bg-teal/5">
                     <Phone size={16} className="text-teal" />
                   </div>
-                  <span className="font-cormorant text-base text-ink/70 group-hover:text-teal transition-colors">
+                  <span className="font-cormorant text-base text-ink/95 group-hover:text-teal transition-colors">
                     +92 343 5071032
                   </span>
                 </a>
@@ -130,7 +130,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     title={label}
-                    className="p-3 border border-ink/10 text-ink/40 hover:border-teal/50 hover:text-teal transition-all duration-200"
+                    className="p-3 border border-ink/15 text-ink/75 hover:border-teal/50 hover:text-teal transition-all duration-200"
                   >
                     <Icon size={18} />
                   </a>
@@ -140,7 +140,7 @@ export default function Contact() {
 
             <SectionReveal delay={0.2}>
               <div>
-                <p className="font-mono text-xs text-ink/30 mb-3 tracking-wider">OPEN TO</p>
+                <p className="font-mono text-xs text-ink/70 mb-3 tracking-wider">OPEN TO</p>
                 <div className="flex flex-wrap gap-2">
                   {engagements.map((e) => (
                     <span
@@ -161,13 +161,13 @@ export default function Contact() {
               <div className="h-full flex flex-col items-center justify-center border border-ink/10 bg-ink/5 p-10 text-center">
                 <div className="font-cormorant text-ink/30 text-5xl mb-4">⊘</div>
                 <h3 className="font-jost font-light text-xl text-ink mb-2 uppercase tracking-wider">Limit Reached</h3>
-                <p className="font-cormorant text-base text-ink/50">You&apos;ve sent {SESSION_LIMIT} messages this session. Please reach out again later or email directly.</p>
+                <p className="font-cormorant text-base text-ink/85">You&apos;ve sent {SESSION_LIMIT} messages this session. Please reach out again later or email directly.</p>
               </div>
             ) : sent ? (
               <div className="h-full flex flex-col items-center justify-center border border-teal/30 bg-teal/5 p-10 text-center">
                 <div className="font-cormorant text-teal text-5xl mb-4 italic">✓</div>
                 <h3 className="font-jost font-light text-xl text-ink mb-2 uppercase tracking-wider">Message Sent</h3>
-                <p className="font-cormorant text-base text-ink/50">I&apos;ll get back to you within 24 hours.</p>
+                <p className="font-cormorant text-base text-ink/85">I&apos;ll get back to you within 24 hours.</p>
                 {sendCount < SESSION_LIMIT && (
                   <button
                     onClick={() => setSent(false)}
@@ -180,7 +180,7 @@ export default function Contact() {
             ) : (
               <form onSubmit={onSubmit} className="space-y-5">
                 <div>
-                  <label className="font-mono text-xs text-ink/40 tracking-wider block mb-2">NAME</label>
+                  <label className="font-mono text-xs text-ink/75 font-medium tracking-wider block mb-2">NAME</label>
                   <input
                     type="text"
                     value={form.name}
@@ -192,7 +192,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="font-mono text-xs text-ink/40 tracking-wider block mb-2">EMAIL</label>
+                  <label className="font-mono text-xs text-ink/75 font-medium tracking-wider block mb-2">EMAIL</label>
                   <input
                     type="email"
                     value={form.email}
@@ -204,7 +204,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="font-mono text-xs text-ink/40 tracking-wider block mb-2">SUBJECT</label>
+                  <label className="font-mono text-xs text-ink/75 font-medium tracking-wider block mb-2">SUBJECT</label>
                   <select
                     value={form.subject}
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
@@ -217,7 +217,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="font-mono text-xs text-ink/40 tracking-wider block mb-2">MESSAGE</label>
+                  <label className="font-mono text-xs text-ink/75 font-medium tracking-wider block mb-2">MESSAGE</label>
                   <textarea
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}

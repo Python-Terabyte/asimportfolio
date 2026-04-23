@@ -50,10 +50,10 @@ export default function ProfileCard() {
             key={i}
             className="flex items-baseline justify-between px-6 py-3 hover:bg-teal/3 transition-colors duration-150"
           >
-            <span className="font-mono text-xs text-ink/40 tracking-wider uppercase shrink-0 mr-4">
+            <span className="font-mono text-xs text-ink/70 font-medium tracking-wider uppercase shrink-0 mr-4">
               {row.key}
             </span>
-            <span className="font-cormorant text-base text-ink/80 text-right">
+            <span className="font-cormorant text-base text-ink font-semibold text-right">
               {row.value}
             </span>
           </div>

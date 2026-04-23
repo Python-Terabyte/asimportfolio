@@ -103,16 +103,16 @@ export default function Projects() {
                 ) : null}
 
                 <div className="p-6">
-                  <h3 className="font-jost font-light text-sm text-ink mb-3 group-hover:text-teal transition-colors duration-300 leading-snug uppercase tracking-wider">
+                  <h3 className="font-jost font-semibold text-sm text-ink mb-3 group-hover:text-teal transition-colors duration-300 leading-snug uppercase tracking-wider">
                     {project.title}
                   </h3>
-                  <p className="font-cormorant text-base text-ink/55 leading-relaxed mb-4">
+                  <p className="font-cormorant text-base text-ink/90 leading-relaxed mb-4">
                     {project.description}
                   </p>
 
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="font-mono text-xs px-2 py-0.5 border border-ink/10 text-ink/35">
+                      <span key={tag} className="font-mono text-xs px-2 py-0.5 border border-ink/20 text-ink/75">
                         {tag}
                       </span>
                     ))}
@@ -127,7 +127,7 @@ export default function Projects() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="ml-auto text-ink/30 hover:text-teal transition-colors"
+                        className="ml-auto text-ink/60 hover:text-teal transition-colors"
                       >
                         <ExternalLink size={16} />
                       </a>

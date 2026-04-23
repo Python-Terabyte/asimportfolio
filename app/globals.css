@@ -15,8 +15,9 @@ html {
 
 body {
   background-color: #F8F7F4;
-  color: #191A1C;
+  color: #0D0E10;
   font-family: var(--font-cormorant), serif;
+  font-weight: 500;
   overflow-x: hidden;
 }
 
