@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description:
       "ACMA-qualified BI Architect and Fintech Strategist. Built financial intelligence systems serving 200K+ businesses across 190+ countries.",
     type: "website",
-    url: "https://muhammadasimsaleem.com",
+    url: "https://asimsaleem.online",
   },
   twitter: {
     card: "summary_large_image",

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const TO_EMAIL = "asimsaleem.net@gmail.com";
+const TO_EMAIL = "asimsaleem.portfolio@gmail.com";
 
 export async function POST(req: NextRequest) {
   const apiKey = process.env.RESEND_API_KEY;
@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
   }
 
   const { error } = await resend.emails.send({
-    from: "Portfolio Contact <contact@muhammadasimsaleem.com>",
+    from: "Portfolio Contact <contact@asimsaleem.online>",
     to: TO_EMAIL,
     replyTo: email,
     subject: `[Portfolio] ${subject} — from ${name}`,

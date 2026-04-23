@@ -5,7 +5,8 @@
       "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-turbopack --yes)",
       "Bash(npm install *)",
       "Bash(npm run *)",
-      "Bash(npm list *)"
+      "Bash(npm list *)",
+      "Bash(node -e \"const fs=require\\('fs'\\); const c=fs.readFileSync\\('.env.local','utf8'\\); console.log\\(c.includes\\('RESEND_API_KEY=re_'\\) ? 'KEY FOUND in .env.local' : 'KEY MISSING or malformed'\\)\")"
     ]
   }
 }
