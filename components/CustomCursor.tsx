@@ -13,57 +13,100 @@ export default function CustomCursor() {
     let mouseY = 0;
     let ringX = 0;
     let ringY = 0;
+    let dotScale = 1;
+    let ringScale = 1;
+    let targetDotScale = 1;
+    let targetRingScale = 1;
+    let isHovering = false;
     let raf: number;
+
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
     const onMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
+    };
+
+    const onMouseDown = () => {
+      targetDotScale = 0.6;
+      targetRingScale = 0.7;
+    };
+
+    const onMouseUp = () => {
+      targetDotScale = isHovering ? 0 : 1;
+      targetRingScale = isHovering ? 2.2 : 1;
+    };
+
+    const onDocMouseOver = (e: MouseEvent) => {
+      const target = (e.target as Element).closest(
+        "a, button, [role=button], input, textarea, select, label"
+      );
+      if (target && !isHovering) {
+        isHovering = true;
+        targetDotScale = 0;
+        targetRingScale = 2.2;
+      }
+    };
+
+    const onDocMouseOut = (e: MouseEvent) => {
+      const target = (e.target as Element).closest(
+        "a, button, [role=button], input, textarea, select, label"
+      );
+      if (target && isHovering) {
+        isHovering = false;
+        targetDotScale = 1;
+        targetRingScale = 1;
       }
     };
 
     const animate = () => {
-      ringX += (mouseX - ringX) * 0.12;
-      ringY += (mouseY - ringY) * 0.12;
-      if (ringRef.current) {
-        ringRef.current.style.transform = `translate(${ringX - 16}px, ${ringY - 16}px)`;
+      // Snappier ring: 0.22 lerp factor (was 0.12)
+      ringX = lerp(ringX, mouseX, 0.22);
+      ringY = lerp(ringY, mouseY, 0.22);
+      dotScale = lerp(dotScale, targetDotScale, 0.2);
+      ringScale = lerp(ringScale, targetRingScale, 0.18);
+
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate3d(${mouseX - 4}px, ${mouseY - 4}px, 0) scale(${dotScale})`;
       }
+      if (ringRef.current) {
+        ringRef.current.style.transform = `translate3d(${ringX - 16}px, ${ringY - 16}px, 0) scale(${ringScale})`;
+      }
+
       raf = requestAnimationFrame(animate);
     };
 
-    const onHover = () => {
-      ringRef.current?.classList.add("scale-150");
-      dotRef.current?.classList.add("scale-150");
-    };
-    const onLeave = () => {
-      ringRef.current?.classList.remove("scale-150");
-      dotRef.current?.classList.remove("scale-150");
-    };
-
-    document.addEventListener("mousemove", onMouseMove);
-    document.querySelectorAll("a, button, [role=button]").forEach((el) => {
-      el.addEventListener("mouseenter", onHover);
-      el.addEventListener("mouseleave", onLeave);
-    });
+    document.addEventListener("mousemove", onMouseMove, { passive: true });
+    document.addEventListener("mousedown", onMouseDown);
+    document.addEventListener("mouseup", onMouseUp);
+    document.addEventListener("mouseover", onDocMouseOver);
+    document.addEventListener("mouseout", onDocMouseOut);
 
     raf = requestAnimationFrame(animate);
+
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mousedown", onMouseDown);
+      document.removeEventListener("mouseup", onMouseUp);
+      document.removeEventListener("mouseover", onDocMouseOver);
+      document.removeEventListener("mouseout", onDocMouseOut);
       cancelAnimationFrame(raf);
     };
   }, []);
 
   return (
     <>
+      {/* Dot — follows mouse instantly */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-2 h-2 bg-teal rounded-full pointer-events-none z-[9999] transition-transform duration-100 hidden md:block"
+        className="fixed top-0 left-0 w-2 h-2 bg-[#006879] rounded-full pointer-events-none z-[9999] will-change-transform hidden md:block"
+        style={{ transform: "translate3d(-100px, -100px, 0) scale(1)" }}
       />
+      {/* Ring — trails mouse with lerp, expands on hover */}
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 w-8 h-8 border border-teal rounded-full pointer-events-none z-[9998] transition-transform duration-200 hidden md:block"
-        style={{ opacity: 0.5 }}
+        className="fixed top-0 left-0 w-8 h-8 border border-[#006879] rounded-full pointer-events-none z-[9998] will-change-transform opacity-60 hidden md:block"
+        style={{ transform: "translate3d(-100px, -100px, 0) scale(1)" }}
       />
     </>
   );
