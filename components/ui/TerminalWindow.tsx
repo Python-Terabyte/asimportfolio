@@ -9,7 +9,7 @@ const lines = [
   '$ cat profile.json',
   '{',
   '  "title": "BI Architect & Fintech Strategist",',
-  '  "qualification": "ACMA — ICMAP",',
+  '  "qualification": "ACMA, ICMAP",',
   '  "location": "Islamabad, Pakistan",',
   '  "available": true,',
   '  "openTo": ["Freelance", "Retainer", "Full-time", "Remote"],',
@@ -49,7 +49,7 @@ export default function TerminalWindow() {
         <span className="w-3 h-3 rounded-full bg-red-500/80" />
         <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
         <span className="w-3 h-3 rounded-full bg-green-500/80" />
-        <span className="ml-3 text-xs text-white/30 font-dm">terminal — profile.sh</span>
+        <span className="ml-3 text-xs text-white/30 font-dm">terminal: profile.sh</span>
       </div>
       <div className="p-5 space-y-1 min-h-[380px]">
         {displayed.map((line, i) => (

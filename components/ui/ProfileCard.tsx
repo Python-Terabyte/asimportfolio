@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 const profileRows = [
   { key: "Name", value: "Muhammad Asim Saleem" },
   { key: "Title", value: "BI Architect & Fintech Strategist" },
-  { key: "Qualification", value: "ACMA — ICMAP" },
+  { key: "Qualification", value: "ACMA, ICMAP" },
   { key: "Location", value: "Islamabad, Pakistan" },
-  { key: "Available", value: "Yes — Global & Remote" },
-  { key: "Open To", value: "Freelance · Retainer · Full-time" },
+  { key: "Available", value: "Yes, Global and Remote" },
+  { key: "Open To", value: "Freelance / Retainer / Full-time" },
   { key: "Platforms", value: "8 integrated" },
   { key: "Transactions", value: "$4.2B processed" },
   { key: "Countries", value: "190+ active" },

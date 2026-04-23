@@ -3,10 +3,46 @@ import { Resend } from "resend";
 
 const TO_EMAIL = "asimsaleem.portfolio@gmail.com";
 
+const RATE_LIMIT = 5;
+const WINDOW_MS = 60 * 60 * 1000; // 1 hour
+
+const ipStore = new Map<string, { count: number; windowStart: number }>();
+
+function getClientIp(req: NextRequest): string {
+  return (
+    req.headers.get("x-forwarded-for")?.split(",")[0].trim() ??
+    req.headers.get("x-real-ip") ??
+    "unknown"
+  );
+}
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = ipStore.get(ip);
+
+  if (!entry || now - entry.windowStart > WINDOW_MS) {
+    ipStore.set(ip, { count: 1, windowStart: now });
+    return false;
+  }
+
+  if (entry.count >= RATE_LIMIT) return true;
+
+  entry.count++;
+  return false;
+}
+
 export async function POST(req: NextRequest) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     return NextResponse.json({ error: "Email service not configured." }, { status: 503 });
+  }
+
+  const ip = getClientIp(req);
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: "Too many messages. Please try again later." },
+      { status: 429 }
+    );
   }
 
   const resend = new Resend(apiKey);
@@ -20,7 +56,7 @@ export async function POST(req: NextRequest) {
     from: "Portfolio Contact <contact@asimsaleem.online>",
     to: TO_EMAIL,
     replyTo: email,
-    subject: `[Portfolio] ${subject} — from ${name}`,
+    subject: `[Portfolio] ${subject} from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\n${message}`,
     html: `
       <div style="font-family: Georgia, serif; max-width: 600px; color: #191A1C;">

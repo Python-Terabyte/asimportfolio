@@ -3,11 +3,10 @@ import SectionReveal from "@/components/ui/SectionReveal";
 import ProfileCard from "@/components/ui/ProfileCard";
 
 const skillTags = [
-  "Power BI", "Tableau", "SQL", "Python", "Excel VBA",
-  "QuickBooks", "Xero", "Zoho", "Shopify", "API Integration",
-  "BRD / FRD", "Agile", "Jira", "ClickUp", "Azure DevOps",
-  "Financial Modeling", "KPI Design", "Virtual CFO", "LLM Workflows",
-  "Data Pipelines", "ACMA", "Product Delivery",
+  "Microsoft Excel (Expert)", "Power BI", "Tableau", "Financial Modeling",
+  "KPI Design", "Virtual CFO", "ACMA",
+  "QuickBooks", "Xero", "Zoho", "Shopify",
+  "BRD / FRD / PRD", "Agile", "Product Delivery", "AI Workflow Design",
 ];
 
 export default function About() {
@@ -30,25 +29,21 @@ export default function About() {
             <SectionReveal delay={0.1}>
               <div className="space-y-5 font-cormorant text-lg text-ink/60 leading-relaxed mb-8">
                 <p>
-                  I joined Metric in 2022 as an accounts analyst — the person who cleaned data,
-                  ran reports, and mapped transactions. Within two years, I was architecting the
-                  pipelines those reports depended on. Not because I was promoted into it, but
-                  because I couldn&apos;t stop building what wasn&apos;t there yet.
+                  I joined Metric in 2022 as an accounts analyst. Within two years, I was
+                  designing the BI infrastructure those reports depended on, not because I was
+                  promoted into it, but because I kept building what wasn&apos;t there yet.
                 </p>
                 <p>
-                  Today, I&apos;m the Manager of External Execution at Metric HQ — a fintech platform
-                  active in 190+ countries, trusted by 200,000+ business owners, and processing
-                  $4.2B in global transactions. I built the BI infrastructure. I designed the
-                  Business Health Score. I architected the data layer for MAX, Metric&apos;s AI
-                  financial co-pilot. I act as Virtual CFO for 16 UAE businesses and support
-                  28 more. Every system I&apos;ve touched, I built from scratch.
+                  Today I lead as Manager of External Execution at Metric HQ, a fintech platform
+                  active in 190+ countries, trusted by 200,000+ businesses, and processing $4.2B
+                  in global transactions. I designed the Business Health Score, the data
+                  architecture for MAX (Metric&apos;s AI co-pilot), and serve as Virtual CFO for
+                  16 UAE businesses.
                 </p>
                 <p>
-                  I&apos;m ACMA-qualified from ICMAP — the professional body equivalent of an MBA in
-                  Finance — which means I don&apos;t just build dashboards. I understand what the
-                  numbers mean, why they move, and what decisions they should drive. That
-                  combination — financial domain depth plus systems architecture — is rare.
-                  It&apos;s what I bring to every engagement.
+                  ACMA-qualified from ICMAP, I understand what numbers mean, why they move, and
+                  what decisions they should drive. Financial domain depth combined with systems
+                  thinking is what I bring to every engagement.
                 </p>
               </div>
             </SectionReveal>

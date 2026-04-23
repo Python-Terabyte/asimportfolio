@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { BarChart3, GitMerge, CreditCard, Brain, ClipboardList, Layers, type LucideProps } from "lucide-react";
+import { BarChart3, TrendingUp, CreditCard, Brain, ClipboardList, Layers, type LucideProps } from "lucide-react";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionReveal from "@/components/ui/SectionReveal";
@@ -10,7 +10,7 @@ import { SKILLS } from "@/lib/data";
 
 type LucideIcon = ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>;
 const iconMap: Record<string, LucideIcon> = {
-  BarChart3, GitMerge, CreditCard, Brain, ClipboardList, Layers,
+  BarChart3, TrendingUp, CreditCard, Brain, ClipboardList, Layers,
 };
 
 export default function Skills() {

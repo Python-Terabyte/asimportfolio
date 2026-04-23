@@ -59,16 +59,15 @@ export default function Hero() {
           <FadeUp delay={0.24} className="mb-8">
             <div className="flex flex-wrap gap-3">
               {[
+                { label: "Excel (Expert)", accent: true },
                 { label: "Power BI", accent: true },
-                { label: "Tableau", accent: false },
-                { label: "SQL", accent: false },
-                { label: "QuickBooks", accent: true },
-                { label: "Xero", accent: false },
-                { label: "Shopify", accent: false },
-                { label: "API Integration", accent: true },
-                { label: "Agile / Kanban", accent: false },
-                { label: "BRD · FRD · PRD", accent: false },
                 { label: "Financial Modeling", accent: true },
+                { label: "Tableau", accent: false },
+                { label: "QuickBooks", accent: false },
+                { label: "Xero", accent: false },
+                { label: "Agile / Kanban", accent: false },
+                { label: "BRD / FRD / PRD", accent: false },
+                { label: "Virtual CFO", accent: false },
               ].map(({ label, accent }) => (
                 <span
                   key={label}
@@ -86,7 +85,7 @@ export default function Hero() {
 
           <FadeUp delay={0.36}>
             <p className="font-cormorant text-2xl md:text-3xl text-ink/90 font-semibold mb-4 leading-snug">
-              I don&apos;t maintain dashboards —<br className="hidden sm:block" />
+              I don&apos;t maintain dashboards.<br className="hidden sm:block" />
               <span className="text-teal text-teal-glow italic"> I architect the systems that power them.</span>
             </p>
           </FadeUp>

@@ -2,7 +2,8 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Code2 } from "lucide-react";
+import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionReveal from "@/components/ui/SectionReveal";
 import { PROJECTS } from "@/lib/data";
@@ -87,41 +88,51 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.1 + i * 0.07, duration: 0.6, ease: "easeOut" }}
-                className="group bg-panel-light border border-ink/8 p-6 hover:border-teal/30 hover:shadow-teal-sm transition-all duration-300"
+                className="group bg-panel-light border border-ink/8 hover:border-teal/30 hover:shadow-teal-sm transition-all duration-300 overflow-hidden"
               >
-                <h3 className="font-jost font-light text-sm text-ink mb-3 group-hover:text-teal transition-colors duration-300 leading-snug uppercase tracking-wider">
-                  {project.title}
-                </h3>
-                <p className="font-cormorant text-base text-ink/55 leading-relaxed mb-4">
-                  {project.description}
-                </p>
+                {/* Image area */}
+                {project.image ? (
+                  <div className="relative w-full h-44 bg-ink/5 overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ) : null}
 
-                <div className="flex flex-wrap gap-1.5 mb-5">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="font-mono text-xs px-2 py-0.5 border border-ink/10 text-ink/35">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <div className="p-6">
+                  <h3 className="font-jost font-light text-sm text-ink mb-3 group-hover:text-teal transition-colors duration-300 leading-snug uppercase tracking-wider">
+                    {project.title}
+                  </h3>
+                  <p className="font-cormorant text-base text-ink/55 leading-relaxed mb-4">
+                    {project.description}
+                  </p>
 
-                <div className="flex gap-4 items-center mt-auto">
-                  {project.stats.slice(0, 2).map((s) => (
-                    <span key={s} className="font-mono text-xs text-teal/50">{s}</span>
-                  ))}
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ml-auto text-ink/30 hover:text-teal transition-colors"
-                    >
-                      {project.liveUrl.includes("github") ? (
-                        <Code2 size={16} />
-                      ) : (
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="font-mono text-xs px-2 py-0.5 border border-ink/10 text-ink/35">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-4 items-center">
+                    {project.stats.slice(0, 2).map((s) => (
+                      <span key={s} className="font-mono text-xs text-teal/50">{s}</span>
+                    ))}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ml-auto text-ink/30 hover:text-teal transition-colors"
+                      >
                         <ExternalLink size={16} />
-                      )}
-                    </a>
-                  )}
+                      </a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}

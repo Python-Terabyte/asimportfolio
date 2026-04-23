@@ -93,7 +93,7 @@ export default function Services() {
             <div>
               <p className="font-jost font-light text-ink mb-1 tracking-wide uppercase text-sm">Not sure which fits?</p>
               <p className="font-cormorant text-base text-ink/50">
-                Tell me your challenge — I&apos;ll tell you how I can help.
+                Tell me your challenge. I&apos;ll tell you how I can help.
               </p>
             </div>
             <a

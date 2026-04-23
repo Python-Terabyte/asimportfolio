@@ -25,14 +25,14 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Asim Saleem — BI Architect & Fintech Consultant",
+  title: "Muhammad Asim Saleem, BI Architect and Fintech Consultant",
   description:
     "ACMA-qualified BI Architect and Fintech Strategist. Built financial intelligence systems serving 200K+ businesses across 190+ countries. Available for consulting, BI architecture, fintech integration, and Virtual CFO services globally.",
   keywords:
     "BI Architect, Business Intelligence, Fintech Consultant, Virtual CFO, Data Pipelines, Power BI, QuickBooks Integration, ACMA, Financial Analytics, Muhammad Asim Saleem",
   authors: [{ name: "Muhammad Asim Saleem" }],
   openGraph: {
-    title: "Muhammad Asim Saleem — BI Architect & Fintech Consultant",
+    title: "Muhammad Asim Saleem, BI Architect and Fintech Consultant",
     description:
       "ACMA-qualified BI Architect and Fintech Strategist. Built financial intelligence systems serving 200K+ businesses across 190+ countries.",
     type: "website",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Asim Saleem — BI Architect & Fintech Consultant",
+    title: "Muhammad Asim Saleem, BI Architect and Fintech Consultant",
     description:
       "ACMA-qualified BI Architect and Fintech Strategist. Built financial intelligence systems serving 200K+ businesses across 190+ countries.",
   },
