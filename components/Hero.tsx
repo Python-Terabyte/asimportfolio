@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import FloatingPortrait from "@/components/ui/FloatingPortrait";
 
 function ElegantBackground() {
   return (
@@ -23,7 +23,15 @@ function ElegantBackground() {
   );
 }
 
-function FadeUp({ delay, children, className }: { delay: number; children: React.ReactNode; className?: string }) {
+function FadeUp({
+  delay,
+  children,
+  className,
+}: {
+  delay: number;
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -46,7 +54,10 @@ export default function Hero() {
 
           {/* Left: content */}
           <div>
-            <FadeUp delay={0} className="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-teal/20 bg-white/70 backdrop-blur-sm">
+            <FadeUp
+              delay={0}
+              className="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-teal/20 bg-white/70 backdrop-blur-sm"
+            >
               <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
               <span className="font-mono text-xs text-ink/60 tracking-widest">
                 BI Architect · Fintech Strategist · ACMA · Available for Consulting
@@ -89,7 +100,9 @@ export default function Hero() {
             <FadeUp delay={0.36}>
               <p className="font-cormorant text-2xl md:text-3xl text-ink/90 font-semibold mb-4 leading-snug">
                 I don&apos;t maintain dashboards.<br className="hidden sm:block" />
-                <span className="text-teal text-teal-glow italic"> I architect the systems that power them.</span>
+                <span className="text-teal text-teal-glow italic">
+                  {" "}I architect the systems that power them.
+                </span>
               </p>
             </FadeUp>
 
@@ -118,50 +131,20 @@ export default function Hero() {
             </FadeUp>
           </div>
 
-          {/* Right: portrait */}
+          {/* Right: floating portrait */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.9, ease: "easeOut" }}
-            className="hidden lg:flex items-center justify-center relative"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.25, duration: 1.1, ease: "easeOut" }}
+            className="hidden lg:block"
+            style={{ height: "78vh" }}
           >
-            <div
-              className="relative w-full"
-              style={{ height: "78vh" }}
-            >
-              <Image
-                src="/asim.png"
-                alt="Muhammad Asim Saleem"
-                fill
-                priority
-                className="object-contain object-center"
-                style={{
-                  WebkitMaskImage:
-                    "radial-gradient(ellipse 78% 82% at 50% 44%, black 38%, rgba(0,0,0,0.85) 58%, rgba(0,0,0,0.4) 76%, transparent 92%)",
-                  maskImage:
-                    "radial-gradient(ellipse 78% 82% at 50% 44%, black 38%, rgba(0,0,0,0.85) 58%, rgba(0,0,0,0.4) 76%, transparent 92%)",
-                  filter: "contrast(1.14) brightness(1.08) saturate(0.85)",
-                }}
-              />
-
-              {/* Left-edge blend so the photo merges into the left column */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to right, #F8F7F4 0%, rgba(248,247,244,0.6) 18%, transparent 40%)",
-                }}
-              />
-
-              {/* Bottom fade */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to top, #F8F7F4 0%, rgba(248,247,244,0.5) 12%, transparent 30%)",
-                }}
-              />
-            </div>
+            <FloatingPortrait
+              src="/asim.png"
+              alt="Muhammad Asim Saleem"
+              threshold={40}
+              feather={75}
+            />
           </motion.div>
 
         </div>
