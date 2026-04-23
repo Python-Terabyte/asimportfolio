@@ -56,12 +56,20 @@ export default function Hero() {
           <div>
             <FadeUp
               delay={0}
-              className="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-teal/20 bg-white/70 backdrop-blur-sm"
+              className="inline-flex max-w-max items-center gap-3 mb-4 px-4 py-2.5 border border-teal/20 bg-white/70 backdrop-blur-sm"
             >
-              <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
-              <span className="font-mono text-xs text-ink/90 tracking-widest">
-                BI Architect · Fintech Strategist · ACMA · Available for Consulting
-              </span>
+              {["BI Architect", "Fintech Strategist", "ACMA"].map(
+                (item, i, arr) => (
+                  <span key={item} className="inline-flex items-center gap-3">
+                    <span className="font-mono text-[15px] text-ink/90 tracking-widest whitespace-nowrap">
+                      {item}
+                    </span>
+                    {i < arr.length -1 && (
+                      <span className="w-1.5 h-1.5 shrink-0 rounded-full bg-teal animate-pulse" />
+                    )}
+                  </span>
+                )
+              )}
             </FadeUp>
 
             <FadeUp delay={0.12} className="mb-5">
@@ -76,12 +84,13 @@ export default function Hero() {
                   { label: "Excel (Expert)", accent: true },
                   { label: "Power BI", accent: true },
                   { label: "Financial Modeling", accent: true },
-                  { label: "Tableau", accent: false },
-                  { label: "QuickBooks", accent: false },
-                  { label: "Xero", accent: false },
-                  { label: "Agile / Kanban", accent: false },
-                  { label: "BRD / FRD / PRD", accent: false },
-                  { label: "Virtual CFO", accent: false },
+                  { label: "Tableau", accent: true },
+                  { label: "QuickBooks", accent: true },
+                  { label: "Xero", accent: true },
+                  { label: "Agile / Kanban", accent: true },
+                  { label: "BRD / FRD / PRD", accent: true },
+                  { label: "Virtual CFO", accent: true },
+                  { label: "Chief Accountant", accent: true },
                 ].map(({ label, accent }) => (
                   <span
                     key={label}
@@ -99,7 +108,7 @@ export default function Hero() {
 
             <FadeUp delay={0.36}>
               <p className="font-cormorant text-2xl md:text-3xl text-ink/90 font-semibold mb-4 leading-snug">
-                I don&apos;t maintain dashboards.<br className="hidden sm:block" />
+                I don&apos;t just maintain dashboards.<br className="hidden sm:block" />
                 <span className="text-teal text-teal-glow italic">
                   {" "}I architect the systems that power them.
                 </span>
@@ -110,8 +119,8 @@ export default function Hero() {
               <p className="font-cormorant text-lg md:text-xl text-ink/85 mb-10 max-w-2xl leading-relaxed">
                 Senior Business Analyst, BI Architect, and Fintech Product Leader with 5+ years
                 building data infrastructure from scratch. Behind a platform processing{" "}
-                <span className="text-ink font-semibold">$4.2B in transactions</span> across{" "}
-                <span className="text-ink font-semibold">190+ countries</span>.
+                <span className="text-ink font-bold">$4.2B in transactions</span> across{" "}
+                <span className="text-ink font-bold">190+ countries</span>.
               </p>
             </FadeUp>
 
@@ -148,7 +157,7 @@ export default function Hero() {
                 className="object-contain object-bottom"
                 style={{
                   filter:
-                    "contrast(1.06) brightness(1.04) saturate(0.92) drop-shadow(0 24px 64px rgba(0,104,121,0.13))",
+                    "contrast(1.08) brightness(1.06) saturate(0.9) drop-shadow(0 32px 80px rgba(0,0,0,0.35))",
                 }}
               />
             </div>

@@ -236,7 +236,7 @@ export default function Contact() {
                   disabled={loading || limitReached}
                   className="btn-teal-fill w-full py-4 border border-teal text-teal font-jost font-light text-sm tracking-widest uppercase hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {loading ? "Sending…" : `Send Message → (${SESSION_LIMIT - sendCount} left)`}
+                  {loading ? "Sending…" : `Send Message`}
                 </button>
               </form>
             )}

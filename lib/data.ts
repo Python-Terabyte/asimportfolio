@@ -8,9 +8,9 @@ export const NAV_LINKS = [
 ];
 
 export const STATS = [
-  { number: 190, suffix: "+", label: "Countries", sub: "Global Platform Reach" },
-  { number: 4.2, prefix: "$", suffix: "B", label: "Transactions Processed", sub: "Pipeline Volume" },
-  { number: 200, suffix: "K+", label: "Users Served", sub: "Business Owners" },
+  { number: 40, suffix: "+", label: "Satisfied Businesses", sub: "Virtual CFO and Chief Accountant" },
+  { number: 10, prefix: "$", suffix: "M", label: "Transactions Processed", sub: "Transactions Volume" },
+  { number: 8, suffix: "+", label: "Software Integrated", sub: "Including: QBO, Shopify & ZOHO" },
   { number: 75, suffix: "%", label: "Faster Reporting", sub: "BI Automation Impact" },
 ];
 
@@ -132,12 +132,12 @@ export const SKILLS = [
   {
     icon: "CreditCard",
     name: "Fintech Platforms",
-    items: ["QuickBooks", "Xero", "Zoho Books", "Shopify", "Qoyod", "Salla", "Oracle Financials", "Odoo"],
+    items: ["QuickBooks", "Xero", "Zoho Books", "Shopify", "Qoyod", "Salla", "Oracle Financials", "Odoo", "Metric", "ZID"],
   },
   {
     icon: "Brain",
     name: "AI and Automation",
-    items: ["AI Workflow Design", "Prompt Engineering", "LLM Product Design", "Process Automation"],
+    items: ["AI Workflow Design", "Prompt Engineering", "LLM Product Design", "Process Automation", "Vibe Coding"],
   },
   {
     icon: "ClipboardList",
