@@ -54,41 +54,52 @@ export default function Hero() {
 
           {/* Left: content */}
           <div>
-            <FadeUp
-              delay={0}
-              className="inline-flex max-w-max items-center gap-3 mb-4 px-4 py-2.5 border border-teal/20 bg-white/70 backdrop-blur-sm"
-            >
-              {["BI Architect", "Fintech Strategist", "ACMA"].map(
-                (item, i, arr) => (
-                  <span key={item} className="inline-flex items-center gap-3">
-                    <span className="font-mono text-[15px] text-ink/90 tracking-widest whitespace-nowrap">
+            <FadeUp delay={0} className="mb-6">
+              <div className="flex flex-wrap gap-2.5">
+                {["BI Architect", "Fintech Strategist", "ACMA"].map((item) => (
+                  <div
+                    key={item}
+                    className="group relative inline-flex items-center gap-2.5 pl-4 pr-5 py-2.5 bg-white border border-teal/25 shadow-teal-sm hover:shadow-teal-md hover:border-teal/60 hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    <span className="absolute left-0 top-0 bottom-0 w-[3px] bg-teal" />
+                    <span className="relative flex items-center justify-center w-2 h-2">
+                      <span className="absolute inset-0 rounded-full bg-teal animate-pulse" />
+                      <span className="absolute inset-0 rounded-full bg-teal blur-[3px] opacity-70" />
+                    </span>
+                    <span className="font-jost text-[12px] md:text-[13px] font-semibold text-ink tracking-[0.22em] uppercase whitespace-nowrap">
                       {item}
                     </span>
-                    {i < arr.length -1 && (
-                      <span className="w-1.5 h-1.5 shrink-0 rounded-full bg-teal animate-pulse" />
-                    )}
-                  </span>
-                )
-              )}
+                  </div>
+                ))}
+              </div>
             </FadeUp>
 
             <FadeUp delay={0.12} className="mb-5">
-              <h1 className="font-jost font-normal text-2xl md:text-3xl text-ink/90 tracking-wide uppercase">
-                Muhammad Asim Saleem
+              <h1
+                className="font-jost font-bold text-3xl md:text-4xl lg:text-5xl tracking-wide uppercase leading-tight"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(135deg, #003149 0%, #006879 45%, #191A1C 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  filter: "drop-shadow(0 4px 14px rgba(0,49,73,0.28))",
+                }}
+              >
+                Muhammad Asim
               </h1>
             </FadeUp>
 
             <FadeUp delay={0.24} className="mb-8">
               <div className="flex flex-wrap gap-3">
                 {[
-                  { label: "Excel (Expert)", accent: true },
-                  { label: "Power BI", accent: true },
+                  
                   { label: "Financial Modeling", accent: true },
-                  { label: "Tableau", accent: true },
-                  { label: "QuickBooks", accent: true },
-                  { label: "Xero", accent: true },
-                  { label: "Agile / Kanban", accent: true },
-                  { label: "BRD / FRD / PRD", accent: true },
+                  { label: "Budgeting and Forecasting", accent: true },                  
+                  { label: "Tax and Compliance", accent: true },
+                  { label: "Detailed Analysis", accent: true },                  
+                  { label: "Agile & Kanban", accent: true },
+                  { label: "Requirement Documentation", accent: true },
                   { label: "Virtual CFO", accent: true },
                   { label: "Chief Accountant", accent: true },
                 ].map(({ label, accent }) => (
@@ -108,7 +119,7 @@ export default function Hero() {
 
             <FadeUp delay={0.36}>
               <p className="font-cormorant text-2xl md:text-3xl text-ink/90 font-semibold mb-4 leading-snug">
-                I don&apos;t just maintain dashboards.<br className="hidden sm:block" />
+                I don&apos;t maintain dashboards.<br className="hidden sm:block" />
                 <span className="text-teal text-teal-glow italic">
                   {" "}I architect the systems that power them.
                 </span>
