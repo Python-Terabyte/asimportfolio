@@ -56,7 +56,7 @@ export default function Hero() {
           <div>
             <FadeUp delay={0} className="mb-6">
               <div className="flex flex-wrap gap-2.5">
-                {["BI Architect", "Fintech Strategist", "ACMA"].map((item) => (
+                {["CEO & Founder, Quasar Technologies (Private) Limited"].map((item) => (
                   <div
                     key={item}
                     className="group relative inline-flex items-center gap-2.5 pl-4 pr-5 py-2.5 bg-white border border-teal/25 shadow-teal-sm hover:shadow-teal-md hover:border-teal/60 hover:-translate-y-0.5 transition-all duration-300"
@@ -94,6 +94,9 @@ export default function Hero() {
               <div className="flex flex-wrap gap-3">
                 {[
                   
+                  { label: "ACMA", accent: true },
+                  { label: "BI Architect", accent: true },
+                  { label: "Fintech Strategist", accent: true },
                   { label: "Financial Modeling", accent: true },
                   { label: "Budgeting and Forecasting", accent: true },                  
                   { label: "Tax and Compliance", accent: true },
@@ -119,9 +122,9 @@ export default function Hero() {
 
             <FadeUp delay={0.36}>
               <p className="font-cormorant text-2xl md:text-3xl text-ink/90 font-semibold mb-4 leading-snug">
-                I don&apos;t maintain dashboards.<br className="hidden sm:block" />
+                Let&apos;s  not maintain dashboards.<br className="hidden sm:block" />
                 <span className="text-teal text-teal-glow italic">
-                  {" "}I architect the systems that power them.
+                  {" "}And start architecting the systems that power them.
                 </span>
               </p>
             </FadeUp>

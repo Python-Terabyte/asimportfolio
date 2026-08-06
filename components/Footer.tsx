@@ -10,6 +10,7 @@ export default function Footer() {
               MAS<span className="text-teal-light">.</span>
             </div>
             <p className="font-cormorant text-base text-white/75">
+              CEO & Founder, Quasar Technologies (Private) Limited
               BI Architect · Fintech Strategist · ACMA
             </p>
           </div>
