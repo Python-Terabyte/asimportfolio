@@ -97,14 +97,8 @@ export default function Hero() {
                   { label: "ACMA", accent: true },
                   { label: "BI Architect", accent: true },
                   { label: "Fintech Strategist", accent: true },
-                  { label: "Financial Modeling", accent: true },
-                  { label: "Budgeting and Forecasting", accent: true },                  
-                  { label: "Tax and Compliance", accent: true },
-                  { label: "Detailed Analysis", accent: true },                  
-                  { label: "Agile & Kanban", accent: true },
-                  { label: "Requirement Documentation", accent: true },
-                  { label: "Virtual CFO", accent: true },
-                  { label: "Chief Accountant", accent: true },
+                  { label: "Finance and Compliance Expert", accent: true },
+                 
                 ].map(({ label, accent }) => (
                   <span
                     key={label}
