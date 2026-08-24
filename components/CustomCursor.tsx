@@ -99,13 +99,13 @@ export default function CustomCursor() {
       {/* Dot — follows mouse instantly */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-2 h-2 bg-[#006879] rounded-full pointer-events-none z-[9999] will-change-transform hidden md:block"
+        className="fixed top-0 left-0 w-2 h-2 bg-[#EFA23B] rounded-full pointer-events-none z-[9999] will-change-transform hidden md:block"
         style={{ transform: "translate3d(-100px, -100px, 0) scale(1)" }}
       />
       {/* Ring — trails mouse with lerp, expands on hover */}
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 w-8 h-8 border border-[#006879] rounded-full pointer-events-none z-[9998] will-change-transform opacity-60 hidden md:block"
+        className="fixed top-0 left-0 w-8 h-8 border border-[#EFA23B] rounded-full pointer-events-none z-[9998] will-change-transform opacity-60 hidden md:block"
         style={{ transform: "translate3d(-100px, -100px, 0) scale(1)" }}
       />
     </>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Jost, Cormorant_Garamond, DM_Mono } from "next/font/google";
+import { Jost, Playfair_Display, DM_Mono } from "next/font/google";
 import "./globals.css";
 
 const jost = Jost({
@@ -9,9 +9,9 @@ const jost = Jost({
   display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
+const cormorant = Playfair_Display({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   style: ["normal", "italic"],
   variable: "--font-cormorant",
   display: "swap",
@@ -25,24 +25,24 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Asim Saleem, BI Architect and Fintech Consultant",
+  title: "Muhammad Asim Saleem — BI Architect & Fintech Consultant",
   description:
-    "ACMA-qualified BI Architect and Fintech Strategist. Built financial intelligence systems serving 200K+ businesses across 190+ countries. Available for consulting, BI architecture, fintech integration, and Virtual CFO services globally.",
+    "ACMA-qualified BI Architect and Fintech Strategist building financial intelligence systems for 200K+ businesses across 190+ countries. Available for BI architecture, fintech integration, and Virtual CFO engagements worldwide.",
   keywords:
     "BI Architect, Business Intelligence, Fintech Consultant, Virtual CFO, Data Pipelines, Power BI, QuickBooks Integration, ACMA, Financial Analytics, Muhammad Asim Saleem",
   authors: [{ name: "Muhammad Asim Saleem" }],
   openGraph: {
-    title: "Muhammad Asim Saleem, CEO & Founder Quasar Technologies",
+    title: "Muhammad Asim Saleem — BI Architect & Fintech Consultant",
     description:
-      "ACMA-qualified BI Architect and Fintech Strategist. Built financial intelligence systems serving 200K+ businesses across 190+ countries.",
+      "ACMA-qualified BI Architect and Fintech Strategist building financial intelligence systems for 200K+ businesses across 190+ countries.",
     type: "website",
     url: "https://asimsaleem.online",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Asim Saleem, CEO & Founder Quasar Technologies",
+    title: "Muhammad Asim Saleem — BI Architect & Fintech Consultant",
     description:
-      "ACMA-qualified BI Architect and Fintech Strategist. Built financial intelligence systems serving 200K+ businesses across 190+ countries.",
+      "ACMA-qualified BI Architect and Fintech Strategist building financial intelligence systems for 200K+ businesses across 190+ countries.",
   },
 };
 
@@ -53,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${jost.variable} ${cormorant.variable} ${dmMono.variable}`}>
-      <body className="antialiased bg-cream text-ink font-cormorant">
+      <body className="antialiased bg-cream text-ink font-cormorant" style={{ fontOpticalSizing: "auto" }}>
         {children}
       </body>
     </html>

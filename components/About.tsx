@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionReveal from "@/components/ui/SectionReveal";
 import ProfileCard from "@/components/ui/ProfileCard";
@@ -20,9 +21,9 @@ export default function About() {
           <div>
             <SectionReveal>
               <SectionLabel>About</SectionLabel>
-              <h2 className="font-jost font-light text-4xl md:text-5xl text-ink mb-8 leading-tight uppercase tracking-wide">
-                The Mind Behind<br />
-                <span className="text-teal text-teal-glow italic font-cormorant font-semibold normal-case">the Machine</span>
+              <h2 className="font-cormorant font-bold text-3xl md:text-4xl text-ink mb-8 leading-[1.15]">
+                The Mind Behind{" "}
+                <span className="text-forest italic font-semibold">the Machine</span>
               </h2>
             </SectionReveal>
 
@@ -53,7 +54,7 @@ export default function About() {
                 {skillTags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-xs px-3 py-1 border border-teal/20 text-teal/70 bg-teal/5 hover:border-teal/60 hover:text-teal transition-all duration-200"
+                    className="font-mono text-xs px-3 py-1 rounded-full border border-amber/30 text-ink/75 bg-amber/8 hover:border-amber/70 hover:text-forest transition-all duration-200"
                   >
                     {tag}
                   </span>
@@ -62,9 +63,26 @@ export default function About() {
             </SectionReveal>
           </div>
 
-          {/* Right — profile card */}
+          {/* Right — layered photo + profile card */}
           <SectionReveal delay={0.15} className="lg:sticky lg:top-24">
-            <ProfileCard />
+            <div className="relative pt-14 pl-10">
+              {/* Offset backdrop */}
+              <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl bg-amber/15 rotate-2 pointer-events-none" />
+
+              <div className="rotate-1 hover:rotate-0 transition-transform duration-300">
+                <ProfileCard />
+              </div>
+
+              {/* Overlapping circular photo */}
+              <div className="absolute -top-10 -left-6 w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-cream shadow-amber-lg -rotate-6 bg-forest z-10">
+                <Image
+                  src="/asim.png"
+                  alt="Muhammad Asim Saleem"
+                  fill
+                  className="object-cover object-top scale-[1.8] translate-y-2"
+                />
+              </div>
+            </div>
           </SectionReveal>
         </div>
       </div>

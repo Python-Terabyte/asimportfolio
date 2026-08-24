@@ -18,9 +18,9 @@ export default function Experience() {
       <div className="relative max-w-7xl mx-auto px-6">
         <SectionReveal>
           <SectionLabel>Experience</SectionLabel>
-          <h2 className="font-jost font-light text-4xl md:text-5xl text-ink mb-16 leading-tight uppercase tracking-wide">
-            Where I&apos;ve<br />
-            <span className="text-teal text-teal-glow italic font-cormorant font-semibold normal-case">Built Things</span>
+          <h2 className="font-cormorant font-bold text-3xl md:text-4xl text-ink mb-16 leading-[1.15]">
+            Where I&apos;ve{" "}
+            <span className="text-forest italic font-semibold">Built Things</span>
           </h2>
         </SectionReveal>
 
@@ -39,8 +39,8 @@ export default function Experience() {
               >
                 {/* Timeline dot */}
                 <div
-                  className="hidden md:flex absolute left-[196px] top-1.5 w-2.5 h-2.5 rounded-full bg-teal z-10"
-                  style={{ boxShadow: "0 0 0 3px rgba(0,104,121,0.15)" }}
+                  className="hidden md:flex absolute left-[196px] top-1.5 w-2.5 h-2.5 rounded-full bg-amber z-10"
+                  style={{ boxShadow: "0 0 0 3px rgba(239,162,59,0.20)" }}
                 />
 
                 {/* Left: meta */}
@@ -54,7 +54,7 @@ export default function Experience() {
                         href={role.companyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-teal transition-colors"
+                        className="inline-flex items-center gap-1 hover:text-forest transition-colors"
                       >
                         {role.company}
                         <ExternalLink size={10} />
@@ -73,7 +73,7 @@ export default function Experience() {
                   <ul className="space-y-2">
                     {role.bullets.map((bullet, j) => (
                       <li key={j} className="flex gap-3 font-cormorant text-base text-ink/90 leading-relaxed">
-                        <span className="text-teal/60 mt-1.5 shrink-0">›</span>
+                        <span className="text-amber mt-1.5 shrink-0">✦</span>
                         {bullet}
                       </li>
                     ))}

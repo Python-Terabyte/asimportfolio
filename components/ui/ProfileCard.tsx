@@ -30,16 +30,16 @@ export default function ProfileCard() {
   }, [visibleCount]);
 
   return (
-    <div className="bg-white border border-ink/10 shadow-teal-md overflow-hidden">
+    <div className="bg-white border border-ink/10 shadow-amber-md overflow-hidden">
       {/* Card header */}
-      <div className="bg-teal-dark px-6 py-4 flex items-center justify-between">
-        <span className="font-jost font-light text-white text-xs tracking-[0.3em] uppercase">
+      <div className="bg-forest px-6 py-4 flex items-center justify-between">
+        <span className="font-jost font-light text-cream text-xs tracking-[0.3em] uppercase">
           Profile Overview
         </span>
         <div className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-teal-light/60" />
-          <span className="w-1.5 h-1.5 rounded-full bg-teal-light/40" />
-          <span className="w-1.5 h-1.5 rounded-full bg-teal-light/20" />
+          <span className="w-1.5 h-1.5 rounded-full bg-amber/60" />
+          <span className="w-1.5 h-1.5 rounded-full bg-amber/40" />
+          <span className="w-1.5 h-1.5 rounded-full bg-amber/20" />
         </div>
       </div>
 
@@ -48,7 +48,7 @@ export default function ProfileCard() {
         {profileRows.slice(0, visibleCount).map((row, i) => (
           <div
             key={i}
-            className="flex items-baseline justify-between px-6 py-3 hover:bg-teal/3 transition-colors duration-150"
+            className="flex items-baseline justify-between px-6 py-3 hover:bg-amber/5 transition-colors duration-150"
           >
             <span className="font-mono text-xs text-ink/70 font-medium tracking-wider uppercase shrink-0 mr-4">
               {row.key}
@@ -60,14 +60,14 @@ export default function ProfileCard() {
         ))}
         {visibleCount < profileRows.length && (
           <div className="px-6 py-3">
-            <span className="inline-block w-2 h-4 bg-teal cursor-blink" />
+            <span className="inline-block w-2 h-4 bg-amber cursor-blink" />
           </div>
         )}
       </div>
 
       {/* Card footer */}
       <div className="border-t border-ink/8 px-6 py-3 bg-panel-light">
-        <span className="font-mono text-xs text-teal/70 tracking-wider">
+        <span className="font-mono text-xs text-forest font-semibold tracking-wider">
           STATUS: AVAILABLE FOR NEW ENGAGEMENTS
         </span>
       </div>

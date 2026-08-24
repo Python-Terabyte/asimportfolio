@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { ExternalLink, Globe, Mail, Phone, User, Code2 } from "lucide-react";
+import { Mail, Phone, User, Code2, ExternalLink, Globe } from "lucide-react";
+import type { LucideProps } from "lucide-react";
+import type { ForwardRefExoticComponent, RefAttributes } from "react";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionReveal from "@/components/ui/SectionReveal";
+import { SOCIAL_LINKS } from "@/lib/data";
 
 const engagements = ["Freelance", "Retainer", "Advisory", "Full-time", "Remote", "Relocation"];
 
@@ -14,12 +17,10 @@ const subjects = [
   "Other",
 ];
 
-const socialLinks = [
-  { label: "LinkedIn", icon: User, url: "https://linkedin.com/in/muhammad-a-501087209" },
-  { label: "GitHub", icon: Code2, url: "https://github.com/Python-Terabyte" },
-  { label: "Metric Profile", icon: ExternalLink, url: "https://metricapp.co/about.html" },
-  { label: "Live App", icon: Globe, url: "https://web.metricapp.co/login" },
-];
+type LucideIcon = ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>;
+const iconMap: Record<string, LucideIcon> = {
+  User, Code2, ExternalLink, Globe,
+};
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: subjects[0], message: "" });
@@ -75,8 +76,8 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-24 bg-panel-mid overflow-hidden">
       {/* Subtle background orbs */}
-      <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-teal/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-teal-light/15 blur-3xl pointer-events-none" />
+      <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-amber/8 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-rust/8 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16">
@@ -84,9 +85,9 @@ export default function Contact() {
           <div>
             <SectionReveal>
               <SectionLabel>Contact</SectionLabel>
-              <h2 className="font-jost font-light text-4xl md:text-5xl text-ink mb-5 leading-tight uppercase tracking-wide">
-                Let&apos;s Build<br />
-                <span className="text-teal text-teal-glow italic font-cormorant font-semibold normal-case">Something Real</span>
+              <h2 className="font-cormorant font-bold text-3xl md:text-4xl text-ink mb-5 leading-[1.15]">
+                Let&apos;s Build{" "}
+                <span className="text-forest italic font-semibold">Something Real</span>
               </h2>
               <p className="font-cormorant text-lg text-ink/90 mb-8 leading-relaxed">
                 Open to freelance consulting, retainers, global remote, and relocation.
@@ -100,10 +101,10 @@ export default function Contact() {
                   href="mailto:asimsaleem.net@gmail.com"
                   className="flex items-center gap-3 group"
                 >
-                  <div className="p-2 border border-teal/20 bg-teal/5">
-                    <Mail size={16} className="text-teal" />
+                  <div className="p-2 rounded-lg bg-forest">
+                    <Mail size={16} className="text-amber" />
                   </div>
-                  <span className="font-cormorant text-base text-ink/95 group-hover:text-teal transition-colors">
+                  <span className="font-cormorant text-base text-ink/95 group-hover:text-forest transition-colors">
                     asimsaleem.net@gmail.com
                   </span>
                 </a>
@@ -111,10 +112,10 @@ export default function Contact() {
                   href="tel:+923435071032"
                   className="flex items-center gap-3 group"
                 >
-                  <div className="p-2 border border-teal/20 bg-teal/5">
-                    <Phone size={16} className="text-teal" />
+                  <div className="p-2 rounded-lg bg-forest">
+                    <Phone size={16} className="text-amber" />
                   </div>
-                  <span className="font-cormorant text-base text-ink/95 group-hover:text-teal transition-colors">
+                  <span className="font-cormorant text-base text-ink/95 group-hover:text-forest transition-colors">
                     +92 343 5071032
                   </span>
                 </a>
@@ -123,18 +124,21 @@ export default function Contact() {
 
             <SectionReveal delay={0.15}>
               <div className="flex gap-3 mb-8">
-                {socialLinks.map(({ label, icon: Icon, url }) => (
-                  <a
-                    key={label}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={label}
-                    className="p-3 border border-ink/15 text-ink/75 hover:border-teal/50 hover:text-teal transition-all duration-200"
-                  >
-                    <Icon size={18} />
-                  </a>
-                ))}
+                {SOCIAL_LINKS.map(({ label, icon, url }) => {
+                  const Icon = iconMap[icon];
+                  return (
+                    <a
+                      key={label}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={label}
+                      className="p-3 rounded-full border border-ink/15 text-ink/75 hover:border-amber/60 hover:text-forest transition-all duration-200"
+                    >
+                      {Icon && <Icon size={18} />}
+                    </a>
+                  );
+                })}
               </div>
             </SectionReveal>
 
@@ -145,7 +149,7 @@ export default function Contact() {
                   {engagements.map((e) => (
                     <span
                       key={e}
-                      className="font-mono text-xs px-3 py-1.5 border border-teal/20 text-teal/60 bg-teal/5"
+                      className="font-mono text-xs px-3 py-1.5 rounded-full border border-amber/30 text-ink/75 bg-amber/8"
                     >
                       {e}
                     </span>
@@ -164,14 +168,14 @@ export default function Contact() {
                 <p className="font-cormorant text-base text-ink/85">You&apos;ve sent {SESSION_LIMIT} messages this session. Please reach out again later or email directly.</p>
               </div>
             ) : sent ? (
-              <div className="h-full flex flex-col items-center justify-center border border-teal/30 bg-teal/5 p-10 text-center">
-                <div className="font-cormorant text-teal text-5xl mb-4 italic">✓</div>
+              <div className="h-full flex flex-col items-center justify-center rounded-2xl border border-amber/40 bg-amber/8 p-10 text-center">
+                <div className="font-cormorant text-forest text-5xl mb-4 italic">✓</div>
                 <h3 className="font-jost font-light text-xl text-ink mb-2 uppercase tracking-wider">Message Sent</h3>
                 <p className="font-cormorant text-base text-ink/85">I&apos;ll get back to you within 24 hours.</p>
                 {sendCount < SESSION_LIMIT && (
                   <button
                     onClick={() => setSent(false)}
-                    className="mt-6 font-mono text-xs text-teal/60 hover:text-teal underline underline-offset-2 transition-colors"
+                    className="mt-6 font-mono text-xs text-forest/70 hover:text-forest underline underline-offset-2 transition-colors"
                   >
                     Send another ({SESSION_LIMIT - sendCount} remaining)
                   </button>
@@ -185,7 +189,7 @@ export default function Contact() {
                     type="text"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full bg-white border border-ink/10 text-ink font-cormorant text-base px-4 py-3 focus:outline-none focus:border-teal/50 transition-colors placeholder-ink/30"
+                    className="w-full bg-white border border-ink/10 text-ink font-cormorant text-base px-4 py-3 focus:outline-none focus:border-amber/60 transition-colors placeholder-ink/30"
                     placeholder="Your name"
                   />
                   {errors.name && <p className="font-mono text-xs text-red-500 mt-1">{errors.name}</p>}
@@ -197,7 +201,7 @@ export default function Contact() {
                     type="email"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full bg-white border border-ink/10 text-ink font-cormorant text-base px-4 py-3 focus:outline-none focus:border-teal/50 transition-colors placeholder-ink/30"
+                    className="w-full bg-white border border-ink/10 text-ink font-cormorant text-base px-4 py-3 focus:outline-none focus:border-amber/60 transition-colors placeholder-ink/30"
                     placeholder="your@email.com"
                   />
                   {errors.email && <p className="font-mono text-xs text-red-500 mt-1">{errors.email}</p>}
@@ -208,7 +212,7 @@ export default function Contact() {
                   <select
                     value={form.subject}
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                    className="w-full bg-white border border-ink/10 text-ink font-cormorant text-base px-4 py-3 focus:outline-none focus:border-teal/50 transition-colors"
+                    className="w-full bg-white border border-ink/10 text-ink font-cormorant text-base px-4 py-3 focus:outline-none focus:border-amber/60 transition-colors"
                   >
                     {subjects.map((s) => (
                       <option key={s} value={s}>{s}</option>
@@ -222,7 +226,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     rows={5}
-                    className="w-full bg-white border border-ink/10 text-ink font-cormorant text-base px-4 py-3 focus:outline-none focus:border-teal/50 transition-colors resize-none placeholder-ink/30"
+                    className="w-full bg-white border border-ink/10 text-ink font-cormorant text-base px-4 py-3 focus:outline-none focus:border-amber/60 transition-colors resize-none placeholder-ink/30"
                     placeholder="Tell me about your project or challenge..."
                   />
                   {errors.message && <p className="font-mono text-xs text-red-500 mt-1">{errors.message}</p>}
@@ -234,7 +238,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading || limitReached}
-                  className="btn-teal-fill w-full py-4 border border-teal text-teal font-jost font-light text-sm tracking-widest uppercase hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="btn-amber-fill w-full py-4 rounded-full border border-amber text-forest font-jost font-semibold text-sm tracking-widest uppercase transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? "Sending…" : `Send Message`}
                 </button>

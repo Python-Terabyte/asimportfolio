@@ -3,6 +3,7 @@ export const NAV_LINKS = [
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Products", href: "#products" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
@@ -179,7 +180,7 @@ export const PROJECTS = [
     stats: ["Multiple startups", "UAE and Pakistan"],
     tags: ["Excel", "Financial Modeling", "Investor Reporting"],
     liveUrl: null,
-    image: "/screenshots/financial-model.png",
+    image: null,
     featured: false,
   },
   {
@@ -189,20 +190,41 @@ export const PROJECTS = [
     stats: ["Real-time P&L", "Portfolio analytics"],
     tags: ["Excel", "Financial Analytics"],
     liveUrl: null,
-    image: "/screenshots/psx-tracker.png",
+    image: null,
     featured: false,
+  },
+];
+
+export const PRODUCTS = [
+  {
+    name: "BrandFox",
+    tagline: "Professional Document Creation Platform",
+    description:
+      "A document creation platform with two engines: an AI-assisted resume builder for job seekers, and a generator for business reports, documents, and presentations. Built end-to-end as an independent product.",
+    features: ["AI Resume Builder", "Report Generation", "Document Automation", "Presentation Builder"],
+    status: "live" as const,
+    url: "https://bfox.pro",
+  },
+  {
+    name: "Ledgerly",
+    tagline: "Bookkeeping Software, In Development",
+    description:
+      "A bookkeeping platform inspired by QuickBooks Online and Xero, built from the ground up. Designing the core ledger, invoicing, and reconciliation engine using everything learned architecting Metric's financial infrastructure.",
+    features: ["Invoicing", "Bank Reconciliation", "Multi-Currency", "Financial Reporting"],
+    status: "development" as const,
+    url: null,
   },
 ];
 
 export const SOCIAL_LINKS = [
   {
     label: "LinkedIn",
-    icon: "Linkedin",
+    icon: "User",
     url: "https://linkedin.com/in/muhammad-a-501087209",
   },
   {
     label: "GitHub",
-    icon: "Github",
+    icon: "Code2",
     url: "https://github.com/Python-Terabyte",
   },
   {

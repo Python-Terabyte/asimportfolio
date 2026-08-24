@@ -13,6 +13,9 @@ const iconMap: Record<string, LucideIcon> = {
   BarChart3, TrendingUp, CreditCard, Brain, ClipboardList, Layers,
 };
 
+const rotations = ["", "-rotate-1", "rotate-1", "rotate-2", "-rotate-2", "rotate-1"];
+const stagger = ["", "md:translate-y-2", "md:-translate-y-2", "", "md:translate-y-3", "md:-translate-y-1"];
+
 export default function Skills() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -24,9 +27,9 @@ export default function Skills() {
       <div className="relative max-w-7xl mx-auto px-6">
         <SectionReveal>
           <SectionLabel>Skills</SectionLabel>
-          <h2 className="font-jost font-light text-4xl md:text-5xl text-ink mb-16 leading-tight uppercase tracking-wide">
-            The Full Stack of<br />
-            <span className="text-teal text-teal-glow italic font-cormorant font-semibold normal-case">What I Do</span>
+          <h2 className="font-cormorant font-bold text-3xl md:text-4xl text-ink mb-16 leading-[1.15]">
+            The Full Stack of{" "}
+            <span className="text-forest italic font-semibold">What I Do</span>
           </h2>
         </SectionReveal>
 
@@ -39,21 +42,22 @@ export default function Skills() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.07, duration: 0.55, ease: "easeOut" }}
-                className="group bg-white border border-ink/8 p-6 hover:border-teal/30 hover:shadow-teal-sm transition-all duration-300"
+                className={`group relative bg-white rounded-2xl border border-ink/8 p-6 hover:border-amber/40 hover:shadow-amber-sm hover:rotate-0 transition-all duration-300 overflow-hidden ${rotations[i % rotations.length]} ${stagger[i % stagger.length]}`}
               >
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="p-2 border border-teal/20 bg-teal/5 group-hover:border-teal/40 transition-all duration-300">
-                    {Icon && <Icon size={18} className="text-teal" />}
+                {Icon && <Icon size={80} className="absolute -bottom-4 -right-4 text-forest/[0.04] pointer-events-none" strokeWidth={1} />}
+                <div className="relative flex items-center gap-3 mb-5">
+                  <div className="p-2 rounded-lg bg-forest group-hover:bg-forest/90 transition-all duration-300">
+                    {Icon && <Icon size={18} className="text-amber" />}
                   </div>
-                  <h3 className="font-jost font-semibold text-sm text-ink group-hover:text-teal transition-colors duration-300 uppercase tracking-wider">
+                  <h3 className="font-jost font-semibold text-sm text-ink group-hover:text-forest transition-colors duration-300 uppercase tracking-wider">
                     {skill.name}
                   </h3>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="relative flex flex-wrap gap-2">
                   {skill.items.map((item) => (
                     <span
                       key={item}
-                      className="font-mono text-xs px-2.5 py-1 bg-ink/4 text-ink/85 border border-ink/15 hover:border-teal/40 hover:text-ink transition-all duration-200"
+                      className="font-mono text-xs px-2.5 py-1 rounded-full bg-ink/4 text-ink/85 border border-ink/15 hover:border-amber/50 hover:text-ink transition-all duration-200"
                     >
                       {item}
                     </span>

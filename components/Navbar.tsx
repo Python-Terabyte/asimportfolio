@@ -19,13 +19,14 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-teal-dark/90 backdrop-blur-md border-b border-teal/20 shadow-teal-sm" : "bg-teal-dark/40 backdrop-blur-sm"
+        scrolled ? "bg-forest/95 backdrop-blur-md border-b border-amber/20 shadow-amber-sm" : "bg-forest/60 backdrop-blur-sm"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="#" className="font-jost font-light text-xl text-white tracking-[0.15em] uppercase">
-          MAS<span className="text-teal-light">.</span>
+        <Link href="#" className="inline-flex items-center gap-2 font-jost font-medium text-xl text-cream tracking-[0.1em]">
+          <span className="text-amber text-base">&#10022;</span>
+          MAS<span className="text-amber">.</span>
         </Link>
 
         {/* Desktop nav */}
@@ -34,7 +35,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="font-jost font-medium text-sm text-white/85 hover:text-teal-light transition-colors duration-200 tracking-widest uppercase"
+                className="font-jost font-medium text-sm text-cream/85 hover:text-amber transition-colors duration-200 tracking-widest uppercase"
               >
                 {link.label}
               </a>
@@ -46,7 +47,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <a
             href="#contact"
-            className="btn-teal-fill px-5 py-2 border border-teal-light text-teal-light text-sm font-jost font-medium tracking-widest uppercase hover:text-white transition-colors duration-300"
+            className="px-6 py-2.5 rounded-full bg-amber text-forest text-sm font-jost font-semibold tracking-wide hover:bg-cream transition-colors duration-300"
           >
             Hire Me
           </a>
@@ -54,7 +55,7 @@ export default function Navbar() {
 
         {/* Hamburger */}
         <button
-          className="md:hidden text-white hover:text-teal-light transition-colors"
+          className="md:hidden text-cream hover:text-amber transition-colors"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -69,14 +70,14 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-teal-dark/95 border-b border-teal/20 backdrop-blur-md"
+            className="md:hidden bg-forest/98 border-b border-amber/20 backdrop-blur-md"
           >
             <ul className="px-6 py-4 space-y-4">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="block font-jost font-medium text-sm text-white/85 hover:text-teal-light transition-colors py-1 tracking-widest uppercase"
+                    className="block font-jost font-medium text-sm text-cream/85 hover:text-amber transition-colors py-1 tracking-widest uppercase"
                     onClick={() => setOpen(false)}
                   >
                     {link.label}
@@ -86,7 +87,7 @@ export default function Navbar() {
               <li>
                 <a
                   href="#contact"
-                  className="block font-jost font-light text-sm text-teal border border-teal px-4 py-2 text-center hover:bg-teal hover:text-white transition-all tracking-widest uppercase"
+                  className="block rounded-full font-jost font-semibold text-sm text-forest bg-amber px-4 py-2.5 text-center hover:bg-cream transition-all tracking-wide"
                   onClick={() => setOpen(false)}
                 >
                   Hire Me

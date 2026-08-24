@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import Products from "@/components/Products";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
@@ -23,6 +24,7 @@ export default function Home() {
         <Experience />
         <Skills />
         <Projects />
+        <Products />
         <Contact />
       </main>
       <Footer />
