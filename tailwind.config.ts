@@ -9,41 +9,53 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#F5F0E3",
-        "panel-light": "#EFE7D2",
-        "panel-mid": "#E7DCBE",
-        "panel-dark": "#DED0A8",
-        "border-gray": "#D8CBA8",
-        amber: "#EFA23B",
-        rust: "#E2613D",
-        forest: "#23301E",
-        sage: "#C9D4AC",
-        ink: "#1B1B15",
+        bg0: "#020202",
+        bg1: "#050505",
+        bg2: "#0A0A0A",
+        bg3: "#111111",
+        gold: "#C9A876",
+        "gold-light": "#E8D4A0",
+        emerald: "#3FA57D",
+        rust: "#D06B4A",
+        ivory: "#F5F5F0",
+        "ivory-dim": "#D8DAE0",
+        "ivory-muted": "#B7BCC4",
+        "ivory-faint": "#9AA0A8",
+        "ivory-ghost": "#7B808A",
       },
       fontFamily: {
-        jost: ["var(--font-jost)", "sans-serif"],
-        cormorant: ["var(--font-cormorant)", "serif"],
-        mono: ["var(--font-dm-mono)", "monospace"],
-      },
-      boxShadow: {
-        amber: "0 0 0 1px #EFA23B",
-        "amber-md": "0 4px 20px rgba(239,162,59,0.20)",
-        "amber-sm": "0 2px 8px rgba(239,162,59,0.14)",
-        "amber-lg": "0 8px 32px rgba(239,162,59,0.24)",
-      },
-      animation: {
-        "pulse-amber": "pulseAmber 2s ease-in-out infinite",
-        "float": "float 6s ease-in-out infinite",
+        sora: ["var(--font-sora)", "sans-serif"],
+        manrope: ["var(--font-manrope)", "sans-serif"],
+        mono: ["var(--font-space-mono)", "monospace"],
       },
       keyframes: {
-        pulseAmber: {
-          "0%, 100%": { boxShadow: "0 2px 8px rgba(239,162,59,0.25)" },
-          "50%": { boxShadow: "0 4px 20px rgba(239,162,59,0.5)" },
-        },
-        float: {
+        floatSlow: {
           "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(-8px)" },
         },
+        floatSlow2: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(6px)" },
+        },
+        spinSlow: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        pulseDot: {
+          "0%, 100%": { opacity: "0.5", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(1.3)" },
+        },
+        fadeUp: {
+          from: { opacity: "0", transform: "translateY(16px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        floatSlow: "floatSlow 7s ease-in-out infinite",
+        floatSlow2: "floatSlow2 8s ease-in-out infinite",
+        spinSlow: "spinSlow 40s linear infinite",
+        pulseDot: "pulseDot 2s ease-in-out infinite",
+        fadeUp: "fadeUp 0.7s ease both",
       },
     },
   },

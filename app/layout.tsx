@@ -1,48 +1,47 @@
 import type { Metadata } from "next";
-import { Jost, Playfair_Display, DM_Mono } from "next/font/google";
+import { Sora, Manrope, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const jost = Jost({
+const sora = Sora({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-jost",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-sora",
   display: "swap",
 });
 
-const cormorant = Playfair_Display({
+const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
   display: "swap",
 });
 
-const dmMono = DM_Mono({
+const spaceMono = Space_Mono({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--font-dm-mono",
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Asim Saleem — BI Architect & Fintech Consultant",
+  title: "Muhammad Asim Saleem, ACMA — CEO & Founder",
   description:
-    "ACMA-qualified BI Architect and Fintech Strategist building financial intelligence systems for 200K+ businesses across 190+ countries. Available for BI architecture, fintech integration, and Virtual CFO engagements worldwide.",
+    "CEO & Director of Quasar Technologies and Manager, External Execution at a fintech platform active in 190+ countries. ACMA-qualified operator building businesses, products, and financial technology.",
   keywords:
-    "BI Architect, Business Intelligence, Fintech Consultant, Virtual CFO, Data Pipelines, Power BI, QuickBooks Integration, ACMA, Financial Analytics, Muhammad Asim Saleem",
+    "Muhammad Asim Saleem, ACMA, CEO, Founder, Quasar Technologies, Fintech, BI Architecture, Virtual CFO, Business Analyst, Product Manager, Ledgerly, BrandFox",
   authors: [{ name: "Muhammad Asim Saleem" }],
   openGraph: {
-    title: "Muhammad Asim Saleem — BI Architect & Fintech Consultant",
+    title: "Muhammad Asim Saleem, ACMA — CEO & Founder",
     description:
-      "ACMA-qualified BI Architect and Fintech Strategist building financial intelligence systems for 200K+ businesses across 190+ countries.",
+      "I build businesses, products, and financial technology that turn complex problems into simple systems.",
     type: "website",
     url: "https://asimsaleem.online",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Asim Saleem — BI Architect & Fintech Consultant",
+    title: "Muhammad Asim Saleem, ACMA — CEO & Founder",
     description:
-      "ACMA-qualified BI Architect and Fintech Strategist building financial intelligence systems for 200K+ businesses across 190+ countries.",
+      "I build businesses, products, and financial technology that turn complex problems into simple systems.",
   },
 };
 
@@ -52,8 +51,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jost.variable} ${cormorant.variable} ${dmMono.variable}`}>
-      <body className="antialiased bg-cream text-ink font-cormorant" style={{ fontOpticalSizing: "auto" }}>
+    <html lang="en" className={`${sora.variable} ${manrope.variable} ${spaceMono.variable}`}>
+      <body className="antialiased bg-bg0 text-ivory font-manrope" style={{ fontOpticalSizing: "auto" }}>
         {children}
       </body>
     </html>

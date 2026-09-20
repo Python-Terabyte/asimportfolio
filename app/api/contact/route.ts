@@ -46,7 +46,8 @@ export async function POST(req: NextRequest) {
   }
 
   const resend = new Resend(apiKey);
-  const { name, email, subject, message } = await req.json();
+  const { name, email, message } = await req.json();
+  const subject = "Portfolio Enquiry";
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });

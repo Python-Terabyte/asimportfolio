@@ -10,115 +10,68 @@
 
 html {
   scroll-behavior: smooth;
-  cursor: none;
 }
 
 body {
-  background-color: #F5F0E3;
-  color: #1B1B15;
-  font-family: var(--font-cormorant), serif;
-  font-weight: 500;
+  background-color: #020202;
+  color: #F5F5F0;
+  font-family: var(--font-manrope), sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-a, button, [role="button"] {
-  cursor: none;
+a {
+  color: #C9A876;
+  text-decoration: none;
+}
+a:hover {
+  color: #E8D4A0;
+}
+
+::selection {
+  background: #C9A87655;
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #EFE7D2;
+  background: #050505;
 }
 ::-webkit-scrollbar-thumb {
-  background: #EFA23B60;
-  border-radius: 2px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #EFA23B;
+  background: #2A2E36;
+  border-radius: 4px;
 }
 
 @layer utilities {
-  .text-amber-glow {
-    text-shadow: 0 2px 12px rgba(239,162,59,0.35);
-  }
-  .border-amber-glow {
-    box-shadow: 0 4px 20px rgba(239,162,59,0.18);
-  }
-  .subtle-grid {
+  .hero-grid {
     background-image:
-      linear-gradient(rgba(27,27,21,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(27,27,21,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-  .subtle-grid-dark {
-    background-image:
-      linear-gradient(rgba(245,240,227,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245,240,227,0.06) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-  .dot-matrix {
-    background-image: radial-gradient(rgba(27,27,21,0.07) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-  .diagonal-lines {
-    background-image: repeating-linear-gradient(
-      45deg,
-      rgba(27,27,21,0.035) 0px,
-      rgba(27,27,21,0.035) 1px,
-      transparent 1px,
-      transparent 20px
-    );
-  }
-  .hex-grid {
-    background-image: radial-gradient(rgba(27,27,21,0.06) 1px, transparent 1px);
-    background-size: 30px 30px;
-  }
-  .grid-overlay {
-    background-image:
-      linear-gradient(rgba(27,27,21,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(27,27,21,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
+      linear-gradient(rgba(245,245,240,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,245,240,0.035) 1px, transparent 1px);
+    background-size: 52px 52px;
   }
 }
 
 .section-label {
-  font-family: var(--font-jost), sans-serif;
-  font-size: 0.7rem;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #6B4A1E;
+  color: #C9A876;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+@keyframes pulseDotAnim {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
 }
-.cursor-blink {
-  animation: blink 1s step-end infinite;
-}
-
-.btn-amber-fill {
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-}
-.btn-amber-fill::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #EFA23B;
-  transform: translateX(-101%);
-  transition: transform 0.3s ease;
-  z-index: -1;
-}
-.btn-amber-fill:hover::before {
-  transform: translateX(0);
+.pulse-dot {
+  animation: pulseDotAnim 2s ease-in-out infinite;
 }
 
-@media (max-width: 768px) {
-  html, a, button, [role="button"] {
-    cursor: auto;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

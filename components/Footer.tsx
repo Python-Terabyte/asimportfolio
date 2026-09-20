@@ -1,42 +1,22 @@
-import { NAV_LINKS } from "@/lib/data";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-forest border-t border-cream/10 py-12">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-8">
-          <div>
-            <div className="inline-flex items-center gap-2 font-jost font-medium text-2xl text-cream tracking-[0.1em] mb-1">
-              <span className="text-amber text-base">&#10022;</span>
-              MAS<span className="text-amber">.</span>
-            </div>
-            <p className="font-cormorant text-base text-cream/75">
-              BI Architect · Fintech Strategist · ACMA
-            </p>
+    <footer className="py-10 px-5 md:px-7 bg-bg0 border-t border-ivory/[0.07]">
+      <div className="max-w-[1280px] mx-auto flex flex-wrap justify-between items-center gap-4">
+        <div className="flex items-center gap-3">
+          <Image
+            src="/asim.png"
+            alt="Asim"
+            width={38}
+            height={38}
+            className="w-[38px] h-[38px] rounded-full object-cover object-top border-[1.5px] border-gold"
+          />
+          <div className="font-mono text-[11px] text-ivory-ghost">
+            © 2026 Muhammad Asim Saleem · ACMA · CEO &amp; Director, Quasar Technologies
           </div>
-          <nav>
-            <ul className="flex flex-wrap gap-6">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="font-jost font-medium text-xs text-cream/75 hover:text-amber transition-colors tracking-widest uppercase"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
         </div>
-        <div className="border-t border-cream/10 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-          <p className="font-mono text-xs text-cream/65">
-            © 2026 Muhammad Asim Saleem · ACMA · BI Architect · Available Globally
-          </p>
-          <p className="font-mono text-xs text-cream/60">
-            Islamabad, Pakistan · Open to Remote & Relocation
-          </p>
-        </div>
+        <div className="font-mono text-[11px] text-ivory-ghost">Islamabad, Pakistan · Remote &amp; Relocation</div>
       </div>
     </footer>
   );

@@ -1,196 +1,174 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Sparkles } from "lucide-react";
+import { HERO_BADGES } from "@/lib/data";
 
-function ElegantBackground() {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-amber/8 blur-3xl" />
-      <div className="absolute bottom-10 -left-20 w-80 h-80 rounded-full bg-sage/10 blur-3xl" />
-      <div className="absolute top-1/3 right-1/3 w-56 h-56 rounded-full bg-rust/6 blur-2xl" />
-      <div className="absolute top-0 right-0 w-64 h-64 opacity-30 pointer-events-none">
-        <svg viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M256 0 L256 256 L0 256" stroke="#EFA23B" strokeWidth="0.5" opacity="0.4" />
-          <path d="M196 0 L196 60 L130 60 L130 120" stroke="#EFA23B" strokeWidth="0.5" opacity="0.4" />
-          <path d="M226 0 L226 90 L160 90 L160 150 L90 150" stroke="#EFA23B" strokeWidth="0.5" opacity="0.3" />
-          <circle cx="130" cy="60" r="3" fill="#EFA23B" opacity="0.5" />
-          <circle cx="160" cy="150" r="3" fill="#EFA23B" opacity="0.5" />
-          <rect x="124" y="54" width="12" height="12" stroke="#EFA23B" strokeWidth="0.5" fill="none" opacity="0.4" />
-        </svg>
-      </div>
-      {/* Ghost outline word for reference-style texture */}
-      <div
-        className="hidden lg:block absolute top-10 left-0 right-0 text-center select-none font-cormorant font-bold text-[7rem] xl:text-[8.5rem] leading-none uppercase tracking-tight rotate-[-2deg]"
-        style={{
-          WebkitTextStroke: "1px rgba(239,162,59,0.13)",
-          color: "transparent",
-        }}
-      >
-        Architect
-      </div>
-    </div>
-  );
+function useParallaxTilt() {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
+    const onMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+      setTilt({ x: y * -6, y: x * 8 });
+    };
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+
+  return tilt;
 }
-
-function FadeUp({
-  delay,
-  children,
-  className,
-}: {
-  delay: number;
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.7, ease: "easeOut" }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-const badges = [
-  { label: "ACMA", rotate: "-rotate-2" },
-  { label: "BI Architect", rotate: "rotate-1" },
-  { label: "Fintech Strategist", rotate: "-rotate-1" },
-  { label: "Finance & Compliance Expert", rotate: "rotate-2" },
-];
 
 export default function Hero() {
+  const tilt = useParallaxTilt();
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-forest">
-      <ElegantBackground />
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden bg-bg0 pt-[140px] pb-20 px-5 md:px-7"
+      style={{ background: "radial-gradient(ellipse 80% 60% at 70% 20%, rgba(201,168,118,0.08), transparent), #020202" }}
+    >
+      <div className="absolute inset-0 hero-grid pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20 w-full">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
-
-          {/* Left: content */}
-          <div>
-            <FadeUp delay={0} className="mb-6">
-              <div className="group relative inline-flex items-center gap-2.5 pl-4 pr-5 py-2.5 rounded-full bg-cream/10 border border-amber/30 backdrop-blur-sm -rotate-1">
-                <span className="relative flex items-center justify-center w-2 h-2">
-                  <span className="absolute inset-0 rounded-full bg-amber animate-pulse" />
-                  <span className="absolute inset-0 rounded-full bg-amber blur-[3px] opacity-70" />
-                </span>
-                <span className="font-jost text-[12px] md:text-[13px] font-semibold text-cream tracking-[0.18em] uppercase whitespace-nowrap">
-                  Available for New Engagements
-                </span>
-              </div>
-            </FadeUp>
-
-            <FadeUp delay={0.12} className="mb-5">
-              <h1 className="font-cormorant font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-cream">
-                Muhammad Asim
-              </h1>
-            </FadeUp>
-
-            <FadeUp delay={0.24} className="mb-8">
-              <div className="flex flex-wrap gap-3">
-                {badges.map(({ label, rotate }) => (
-                  <span
-                    key={label}
-                    className={`font-mono text-xs px-4 py-2 rounded-full border border-amber/40 text-amber bg-amber/10 ${rotate} hover:rotate-0 transition-transform duration-300`}
-                  >
-                    {label}
-                  </span>
-                ))}
-              </div>
-            </FadeUp>
-
-            <FadeUp delay={0.36}>
-              <p className="font-cormorant text-xl md:text-2xl text-cream font-semibold mb-4 leading-snug">
-                Let&apos;s not maintain dashboards.{" "}
-                <span className="text-amber italic">
-                  And start architecting the systems that power them.
-                </span>
-              </p>
-            </FadeUp>
-
-            <FadeUp delay={0.5}>
-              <p className="font-cormorant text-base md:text-lg text-cream/75 mb-10 max-w-2xl leading-relaxed">
-                Senior Business Analyst, BI Architect, and Fintech Product Leader with 5+ years
-                building data infrastructure from scratch. Behind a platform processing{" "}
-                <span className="text-cream font-bold">$4.2B in transactions</span> across{" "}
-                <span className="text-cream font-bold">190+ countries</span>.
-              </p>
-            </FadeUp>
-
-            <FadeUp delay={0.64} className="flex flex-wrap gap-4">
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-amber text-forest font-jost font-semibold text-sm tracking-widest uppercase hover:bg-cream transition-all duration-300"
-              >
-                View My Work
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-cream/40 text-cream font-jost font-light text-sm tracking-widest uppercase hover:border-amber hover:text-amber transition-all duration-300"
-              >
-                Hire Me for Consulting
-              </a>
-            </FadeUp>
+      <div className="relative z-[2] max-w-[1280px] mx-auto w-full flex flex-wrap gap-16 items-center">
+        <div className="flex-1 min-w-0 basis-[480px]">
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-gold/35 bg-gold/[0.06] mb-7 max-w-full animate-fadeUp">
+            <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 pulse-dot" />
+            <span className="font-mono text-[9.5px] md:text-[11px] tracking-[0.1em] uppercase text-gold whitespace-nowrap">
+              CEO &amp; Founder · Advisory Open
+            </span>
           </div>
 
-          {/* Right: layered photo card */}
+          <h1
+            className="font-sora font-extrabold text-[38px] md:text-5xl lg:text-[64px] leading-[1.05] tracking-[-0.01em] text-ivory mb-5 animate-fadeUp"
+            style={{ animationDelay: "0.08s" }}
+          >
+            Muhammad Asim Saleem<span className="text-gold">,</span> ACMA
+          </h1>
+
+          <p
+            className="font-manrope font-medium text-[17px] md:text-xl leading-relaxed text-ivory-dim max-w-[560px] mb-2.5 animate-fadeUp"
+            style={{ animationDelay: "0.16s" }}
+          >
+            I build businesses, products, and financial technology that turn complex problems into simple systems.
+          </p>
+          <p
+            className="font-mono text-[12.5px] tracking-wide text-ivory-faint mb-6 animate-fadeUp"
+            style={{ animationDelay: "0.2s" }}
+          >
+            CEO &amp; Director, Quasar Technologies
+          </p>
+
+          <div className="flex flex-wrap gap-2.5 mb-9 animate-fadeUp" style={{ animationDelay: "0.26s" }}>
+            {HERO_BADGES.map((badge) => (
+              <span
+                key={badge}
+                className="font-mono text-[11.5px] tracking-wide text-ivory-muted border border-ivory/10 px-3.5 py-1.5 rounded-full bg-white/[0.02] whitespace-nowrap"
+              >
+                {badge}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-4 animate-fadeUp" style={{ animationDelay: "0.32s" }}>
+            <a
+              href="#projects"
+              className="font-sora font-bold text-[13px] tracking-wide uppercase text-bg0 bg-gold px-[30px] py-4 rounded-full whitespace-nowrap hover:bg-gold-light transition-colors"
+            >
+              Explore My Work
+            </a>
+            <a
+              href="#contact"
+              className="font-sora font-semibold text-[13px] tracking-wide uppercase text-ivory border border-ivory/20 px-[30px] py-4 rounded-full whitespace-nowrap hover:border-gold hover:text-gold transition-colors"
+            >
+              Let&apos;s Connect
+            </a>
+          </div>
+        </div>
+
+        <div className="flex-1 min-w-0 basis-[380px] flex justify-center min-h-[440px] relative">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 1.0, ease: "easeOut" }}
-            className="hidden lg:flex items-end justify-center relative"
-            style={{ height: "78vh" }}
+            transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
+            className="w-full max-w-[480px] h-[460px] relative"
+            style={{
+              transform: `perspective(1200px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+              transition: "transform .2s ease-out",
+            }}
           >
-            {/* Offset backdrop card, rotated for a hand-placed feel */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[80%] h-[74%] rounded-[2rem] bg-gradient-to-br from-amber/30 via-rust/20 to-transparent rotate-3" />
-            <div className="absolute bottom-10 left-[8%] w-[78%] h-[70%] rounded-[2rem] border border-amber/25 -rotate-2" />
+            <div className="absolute inset-[18%] rounded-full border border-gold/[0.18] animate-spinSlow" />
+            <div className="absolute inset-[30%] rounded-full border border-dashed border-gold/[0.12]" />
 
-            <div className="relative w-full h-full">
+            <div
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[58%] max-w-[260px] h-[82%] z-[3]"
+              style={{
+                maskImage: "radial-gradient(ellipse 64% 80% at 50% 58%, black 42%, transparent 94%)",
+                WebkitMaskImage: "radial-gradient(ellipse 64% 80% at 50% 58%, black 42%, transparent 94%)",
+              }}
+            >
               <Image
                 src="/asim.png"
                 alt="Muhammad Asim Saleem"
                 fill
                 priority
-                className="object-contain object-bottom"
-                style={{
-                  filter:
-                    "contrast(1.08) brightness(1.06) saturate(0.95) drop-shadow(0 32px 80px rgba(0,0,0,0.45))",
-                }}
+                className="object-cover object-top"
+                style={{ filter: "contrast(1.08) saturate(0.92) brightness(1.05)" }}
               />
             </div>
 
-            {/* Floating sticker card */}
-            <div className="absolute top-4 right-0 xl:right-4 bg-cream text-forest rounded-2xl px-5 py-4 shadow-amber-lg rotate-3 flex items-center gap-3 max-w-[190px]">
-              <Sparkles size={20} className="text-amber shrink-0" />
-              <span className="font-jost text-xs font-semibold leading-snug">
-                5+ Years Architecting Fintech Systems
-              </span>
+            <div className="absolute top-[2%] left-[3%] w-40 p-4 rounded-2xl bg-bg3/70 border border-gold/25 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.4)] animate-floatSlow">
+              <div className="font-mono text-[9px] tracking-wide text-gold uppercase mb-2">Ledger Engine</div>
+              <div className="flex gap-1 items-end h-[34px]">
+                <div className="flex-1 h-[60%] bg-gold/50 rounded-sm" />
+                <div className="flex-1 h-full bg-gold rounded-sm" />
+                <div className="flex-1 h-[40%] bg-gold/40 rounded-sm" />
+                <div className="flex-1 h-[80%] bg-gold/70 rounded-sm" />
+              </div>
             </div>
 
-            {/* Small floating stat chip */}
-            <div className="absolute bottom-16 -left-2 bg-forest border border-amber/40 rounded-xl px-4 py-3 -rotate-2">
-              <div className="font-cormorant font-bold text-lg text-amber leading-none">$4.2B+</div>
-              <div className="font-mono text-[9px] text-cream/70 tracking-wider uppercase mt-1">Processed</div>
+            <div className="absolute top-[4%] right-[2%] w-[142px] p-3.5 rounded-2xl bg-bg3/70 border border-ivory/10 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.4)] animate-floatSlow2">
+              <div className="font-mono text-[9px] tracking-wide text-ivory-faint uppercase mb-1.5">Data Nodes</div>
+              <div className="flex gap-1.5">
+                <span className="w-[7px] h-[7px] rounded-full bg-gold" />
+                <span className="w-[7px] h-[7px] rounded-full bg-[#4A5058]" />
+                <span className="w-[7px] h-[7px] rounded-full bg-gold/60" />
+                <span className="w-[7px] h-[7px] rounded-full bg-[#4A5058]" />
+              </div>
             </div>
+
+            <div className="absolute bottom-[2%] left-[3%] w-[152px] p-3.5 rounded-2xl bg-bg3/70 border border-ivory/10 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.4)] animate-floatSlow">
+              <div className="font-mono text-[9px] tracking-wide text-ivory-faint uppercase mb-1.5">AI Co-Pilot</div>
+              <div className="font-sora text-[13px] text-ivory font-semibold">Natural-language finance</div>
+            </div>
+
+            <div className="absolute bottom-[4%] right-[2%] w-36 px-[18px] py-4 rounded-2xl bg-gold shadow-[0_20px_50px_rgba(0,0,0,0.45)] animate-floatSlow2">
+              <div className="font-sora font-extrabold text-[22px] text-bg0 leading-none">$4.2B+</div>
+              <div className="font-mono text-[9px] tracking-wide text-bg0/80 uppercase mt-1">Platform Volume</div>
+            </div>
+
+            <div
+              className="absolute top-[48%] left-[47%] w-10 h-10 rounded-full"
+              style={{
+                background: "radial-gradient(circle, #C9A876, #8A7148)",
+                boxShadow: "0 0 40px rgba(201,168,118,0.5)",
+              }}
+            />
           </motion.div>
-
         </div>
       </div>
 
-      {/* Scroll down badge */}
       <a
         href="#about"
-        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 items-center justify-center w-16 h-16 rounded-full bg-amber text-forest font-jost text-[10px] font-semibold tracking-widest uppercase text-center leading-tight hover:scale-105 transition-transform duration-300 z-10 rotate-[-6deg]"
+        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] tracking-[0.16em] uppercase text-ivory-ghost flex-col items-center gap-2"
       >
-        Scroll<br />Down
+        <span>Scroll</span>
+        <span className="w-px h-7 bg-gradient-to-b from-ivory-ghost to-transparent" />
       </a>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-forest to-transparent pointer-events-none" />
     </section>
   );
 }

@@ -3,10 +3,5 @@ interface SectionLabelProps {
 }
 
 export default function SectionLabel({ children }: SectionLabelProps) {
-  return (
-    <div className="flex items-center gap-3 mb-4">
-      <span className="w-6 h-px bg-amber" />
-      <span className="section-label">{children}</span>
-    </div>
-  );
+  return <div className="section-label mb-3.5">{children}</div>;
 }

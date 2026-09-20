@@ -1,87 +1,51 @@
-"use client";
-
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { ExternalLink } from "lucide-react";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionReveal from "@/components/ui/SectionReveal";
 import { EXPERIENCE } from "@/lib/data";
 
 export default function Experience() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
-    <section id="experience" className="relative py-24 bg-cream overflow-hidden">
-      <div className="absolute inset-0 hex-grid pointer-events-none" />
-
-      <div className="relative max-w-7xl mx-auto px-6">
+    <section id="experience" className="py-[76px] px-5 md:px-7 bg-bg0">
+      <div className="max-w-[1080px] mx-auto">
         <SectionReveal>
           <SectionLabel>Experience</SectionLabel>
-          <h2 className="font-cormorant font-bold text-3xl md:text-4xl text-ink mb-16 leading-[1.15]">
-            Where I&apos;ve{" "}
-            <span className="text-forest italic font-semibold">Built Things</span>
+          <h2 className="font-sora font-bold text-[28px] md:text-[42px] text-ivory mb-12">
+            Accounting → Analysis → Product → Leadership.
           </h2>
         </SectionReveal>
 
-        <div ref={ref} className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-0 md:left-[200px] top-0 bottom-0 w-px bg-ink/10 hidden md:block" />
-
-          <div className="space-y-14">
-            {EXPERIENCE.map((role, i) => (
-              <motion.div
-                key={`${role.company}-${role.period}`}
-                initial={{ opacity: 0, x: -20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
-                className="relative md:grid md:grid-cols-[200px_1fr] md:gap-12"
-              >
-                {/* Timeline dot */}
-                <div
-                  className="hidden md:flex absolute left-[196px] top-1.5 w-2.5 h-2.5 rounded-full bg-amber z-10"
-                  style={{ boxShadow: "0 0 0 3px rgba(239,162,59,0.20)" }}
-                />
-
-                {/* Left: meta */}
-                <div className="mb-3 md:mb-0 md:text-right md:pr-10">
-                  <div className="font-mono text-xs text-ink/70 mb-2 leading-relaxed">
-                    {role.period}
-                  </div>
-                  <div className="font-cormorant text-base font-semibold text-ink/95">
-                    {role.companyUrl ? (
-                      <a
-                        href={role.companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 hover:text-forest transition-colors"
-                      >
-                        {role.company}
-                        <ExternalLink size={10} />
-                      </a>
-                    ) : (
-                      role.company
-                    )}
-                  </div>
-                </div>
-
-                {/* Right: content */}
-                <div className="md:pl-10">
-                  <h3 className="font-jost font-light text-lg text-ink mb-4 uppercase tracking-wider">
-                    {role.title}
-                  </h3>
-                  <ul className="space-y-2">
-                    {role.bullets.map((bullet, j) => (
-                      <li key={j} className="flex gap-3 font-cormorant text-base text-ink/90 leading-relaxed">
-                        <span className="text-amber mt-1.5 shrink-0">✦</span>
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        <div className="relative pl-7 border-l border-ivory/10">
+          {EXPERIENCE.map((role, i) => (
+            <SectionReveal key={`${role.company}-${role.period}`} delay={i * 0.06} className="relative mb-11">
+              <span
+                className="absolute -left-[33px] top-1.5 w-[9px] h-[9px] rounded-full bg-gold"
+                style={{ boxShadow: "0 0 0 4px rgba(201,168,118,0.15)" }}
+              />
+              <div className="font-mono text-[11px] text-ivory-ghost tracking-wide mb-2">{role.period}</div>
+              <div className="flex flex-wrap items-baseline gap-2.5 mb-3">
+                <h3 className="font-sora font-bold text-[19px] text-ivory">{role.title}</h3>
+                {role.companyUrl ? (
+                  <a
+                    href={role.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-manrope text-sm text-gold hover:text-gold-light transition-colors"
+                  >
+                    {role.company}
+                  </a>
+                ) : (
+                  <span className="font-manrope text-sm text-gold">{role.company}</span>
+                )}
+              </div>
+              <ul className="flex flex-col gap-2">
+                {role.bullets.map((bullet, j) => (
+                  <li key={j} className="flex gap-2.5 font-manrope text-[15px] leading-relaxed text-ivory-muted">
+                    <span className="text-gold shrink-0">▪</span>
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+            </SectionReveal>
+          ))}
         </div>
       </div>
     </section>
