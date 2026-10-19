@@ -2,9 +2,7 @@ export const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Founder", href: "#founder" },
-  { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
-  { label: "Case Studies", href: "#casestudy" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
@@ -151,43 +149,6 @@ export const SKILL_GROUPS = [
   { name: "AI & Automation", items: ["AI Workflow Design", "Prompt Engineering", "LLM Product Design", "Process Automation"] },
   { name: "Business Analysis", items: ["BRD / FRD / SRS / PRD", "Requirements Gathering", "Stakeholder Workshops", "UAT Oversight"] },
   { name: "Product & Delivery", items: ["Agile / Kanban", "Sprint Planning", "Stakeholder Management", "Release Coordination"] },
-];
-
-export const PROJECTS = [
-  {
-    title: "Business Health Score Engine",
-    description:
-      "Designed the formula architecture, weighting logic, and validation framework for Metric's flagship composite KPI — aggregating revenue, payables, receivables, inventory velocity, and cash flow from six platforms into a single interpretable score used by 200K+ businesses.",
-    stats: ["200K+ businesses", "190+ countries", "6+ platforms"],
-    featured: true,
-  },
-  {
-    title: "MAX: AI Financial Co-Pilot",
-    description: "Designed the data architecture enabling real-time natural-language financial answers for business owners.",
-    tags: ["AI Architecture", "Fintech"],
-    stat: "200K+ users",
-  },
-  {
-    title: "Investor Financial Modeling Suite",
-    description: "Built dynamic Excel models for startups targeting funding rounds, contributing to successful raises.",
-    tags: ["Excel", "Investor Reporting"],
-    stat: "UAE & Pakistan",
-  },
-  {
-    title: "PSX Portfolio Tracker",
-    description: "Excel-based portfolio manager with real-time P&L tracking and market dashboards.",
-    tags: ["Excel", "Analytics"],
-    stat: "Real-time P&L",
-  },
-];
-
-export const CASE_STUDY_STEPS = [
-  { n: 1, label: "Problem", text: "Six disconnected platforms produced six different pictures of business health, with no single score executives could act on." },
-  { n: 2, label: "Analysis", text: "Mapped revenue, payables, receivables, inventory velocity, and cash flow across every client dataset to find shared, comparable signals." },
-  { n: 3, label: "Strategy", text: "Decided on a weighted composite score rather than a dashboard of separate metrics, prioritizing one number leadership could trust." },
-  { n: 4, label: "Solution", text: "Designed the formula architecture, weighting logic, and validation framework for the Business Health Score." },
-  { n: 5, label: "Technology", text: "Built the data pipeline aggregating six platforms in real time, feeding the score into Metric's core dashboard and MAX." },
-  { n: 6, label: "Business Impact", text: "Now used by 200,000+ businesses across 190+ countries as the single interpretable measure of financial health." },
 ];
 
 export const SOCIAL_LINKS = [

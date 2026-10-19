@@ -76,7 +76,7 @@ export default function Hero() {
 
           <div className="flex flex-wrap gap-4 animate-fadeUp" style={{ animationDelay: "0.32s" }}>
             <a
-              href="#projects"
+              href="#product"
               className="font-sora font-bold text-[13px] tracking-wide uppercase text-bg0 bg-gold px-[30px] py-4 rounded-full whitespace-nowrap hover:bg-gold-light transition-colors"
             >
               Explore My Work

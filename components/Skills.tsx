@@ -46,13 +46,13 @@ export default function Skills() {
 
         <SectionReveal delay={0.15}>
           <div
-            className="flex flex-wrap gap-3 min-h-[160px] p-8 rounded-[20px] bg-bg2"
-            style={{ border: `1px solid ${activeColor}44` }}
+            className="grid gap-3 content-start p-8 rounded-[20px] bg-bg2"
+            style={{ border: `1px solid ${activeColor}44`, gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))" }}
           >
             {SKILL_GROUPS[active].items.map((item) => (
               <span
                 key={item}
-                className="font-mono text-[12.5px] text-ivory-dim px-4 py-2.5 rounded-full"
+                className="font-mono text-[12.5px] text-ivory-dim px-4 h-[48px] flex items-center justify-center text-center rounded-full"
                 style={{ background: `${activeColor}18`, border: `1px solid ${activeColor}55` }}
               >
                 {item}

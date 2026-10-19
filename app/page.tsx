@@ -6,8 +6,6 @@ import Stats from "@/components/Stats";
 import Founder from "@/components/Founder";
 import ProductDeepDive from "@/components/ProductDeepDive";
 import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import CaseStudy from "@/components/CaseStudy";
 import Philosophy from "@/components/Philosophy";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
@@ -25,8 +23,6 @@ export default function Home() {
         <Founder />
         <ProductDeepDive />
         <Skills />
-        <Projects />
-        <CaseStudy />
         <Philosophy />
         <Experience />
         <Contact />
