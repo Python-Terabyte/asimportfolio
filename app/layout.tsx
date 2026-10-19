@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "CEO & Director of Quasar Technologies and Manager, External Execution at a fintech platform active in 190+ countries. ACMA-qualified operator building businesses, products, and financial technology.",
   keywords:
-    "Muhammad Asim Saleem, ACMA, CEO, Founder, Quasar Technologies, Fintech, BI Architecture, Virtual CFO, Business Analyst, Product Manager, Ledgerly, BrandFox",
+    "Muhammad Asim Saleem, ACMA, CEO, Founder, Quasar Technologies, Fintech, BI Architecture, Virtual CFO, Business Analyst, Product Manager, Defty Books, BrandFox",
   authors: [{ name: "Muhammad Asim Saleem" }],
   openGraph: {
     title: "Muhammad Asim Saleem, ACMA — CEO & Founder",

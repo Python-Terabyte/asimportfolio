@@ -26,7 +26,7 @@ export const EXECUTIVE_CARDS = [
   { mark: "BA", title: "Business Analyst", desc: "BRD / FRD / SRS / PRD authoring, stakeholder workshops, and requirements as engineering source of truth." },
   { mark: "PM", title: "Product Manager", desc: "Designed the Business Health Score and MAX data architecture end-to-end, requirements to production." },
   { mark: "TS", title: "Technology & Accounting Specialist", desc: "Bridges accounting logic and software architecture across QuickBooks, Xero, Zoho, Shopify, and more." },
-  { mark: "CEO", title: "CEO & Director, Quasar Technologies", desc: "Co-founded a studio spanning business software and games. Leads and builds the business suite — BrandFox and Ledgerly — end-to-end." },
+  { mark: "CEO", title: "CEO & Director, Quasar Technologies", desc: "Co-founded a studio spanning business software and games. Leads and builds the business suite — BrandFox and Defty — end-to-end." },
 ];
 
 export const STATS = [
@@ -113,33 +113,36 @@ export const PRODUCTS = [
     cta: "Visit bfox.pro",
   },
   {
-    name: "Ledgerly",
-    tagline: "Bookkeeping Software, In Development",
+    name: "Defty Books",
+    tagline: "Cloud Accounting Platform, Live",
     description:
-      "A bookkeeping platform inspired by QuickBooks Online and Xero, built from the ground up on everything learned architecting Metric's financial infrastructure.",
-    features: ["Invoicing", "Bank Reconciliation", "Multi-Currency", "Reporting"],
-    status: "development" as const,
-    url: "#product",
-    cta: "See the product",
+      "A full-stack, multi-tenant accounting platform used by 30 businesses. Invoicing, bills, bank reconciliation, financial reporting and a country-aware tax engine covering VAT/GST for 22 jurisdictions. Built with React, NestJS and PostgreSQL.",
+    features: ["Double-Entry Ledger", "Bank Reconciliation", "Multi-Currency", "VAT / GST Engine"],
+    status: "live" as const,
+    url: "https://deftysolutions.com",
+    cta: "Visit deftysolutions.com",
   },
 ];
 
-export const LEDGERLY_CAPABILITIES = [
-  "Double-entry accounting engine",
-  "Automated bank reconciliation",
-  "Multi-currency invoicing",
-  "VAT & tax compliance",
-  "Inventory tracking",
-  "Real-time financial reporting",
+export const DEFTY_CAPABILITIES = [
+  "Double-entry ledger: invoices, bills, expenses, credit notes, journals",
+  "Bank reconciliation with score-based match suggestions and split matching",
+  "Multi-currency with live rates and auto-reversing FX revaluation",
+  "VAT/GST engine for 22 jurisdictions, incl. UAE VAT 201 and UK VAT100",
+  "Inventory with weighted-average COGS",
+  "P&L, balance sheet, cash flow and custom-metric formula engine",
+  "QuickBooks Online import and sync",
 ];
 
-export const LEDGERLY_KPIS = [
-  { label: "Cash", value: "$128K" },
-  { label: "Receivables", value: "$42K" },
-  { label: "Runway", value: "14 mo" },
+export const DEFTY_STACK = ["React", "NestJS", "PostgreSQL", "Drizzle", "Redis / BullMQ", "Firebase", "Jest"];
+
+export const DEFTY_KPIS = [
+  { label: "Businesses", value: "30" },
+  { label: "Jurisdictions", value: "22" },
+  { label: "Currencies", value: "Multi" },
 ];
 
-export const LEDGERLY_BARS = [0.4, 0.6, 0.5, 0.8, 0.65, 0.9, 0.55, 0.75, 0.85, 0.6, 0.7, 0.95];
+export const DEFTY_BARS = [0.4, 0.6, 0.5, 0.8, 0.65, 0.9, 0.55, 0.75, 0.85, 0.6, 0.7, 0.95];
 
 export const SKILL_GROUPS = [
   { name: "BI & Analytics", items: ["Excel (Expert)", "Power BI", "Tableau", "Dashboard Architecture", "KPI Design", "Real-time Reporting"] },

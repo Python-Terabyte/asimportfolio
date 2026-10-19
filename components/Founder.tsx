@@ -29,7 +29,7 @@ export default function Founder() {
             <div className="flex-1 min-w-0 basis-[300px]">
               <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-gold mb-2.5">Business Suite — Led by Asim</div>
               <div className="font-manrope text-[15px] leading-relaxed text-ivory-dim">
-                Accounting, automation, and reporting software — BrandFox and Ledgerly.
+                Accounting, automation, and reporting software — BrandFox and Defty.
               </div>
             </div>
             <div className="flex-1 min-w-0 basis-[300px] pl-12 border-l border-ivory/10">
