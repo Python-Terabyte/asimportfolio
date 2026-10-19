@@ -5,6 +5,7 @@ import ExecutiveProfile from "@/components/ExecutiveProfile";
 import Stats from "@/components/Stats";
 import Founder from "@/components/Founder";
 import ProductDeepDive from "@/components/ProductDeepDive";
+import CaseStudies from "@/components/CaseStudies";
 import Skills from "@/components/Skills";
 import Philosophy from "@/components/Philosophy";
 import Experience from "@/components/Experience";
@@ -22,6 +23,7 @@ export default function Home() {
         <Stats />
         <Founder />
         <ProductDeepDive />
+        <CaseStudies />
         <Skills />
         <Philosophy />
         <Experience />

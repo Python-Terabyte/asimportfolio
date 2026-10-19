@@ -12,7 +12,7 @@ export default function Skills() {
   const activeColor = COLOR_CYCLE[active % COLOR_CYCLE.length];
 
   return (
-    <section id="skills" className="py-[76px] px-5 md:px-7 bg-bg1">
+    <section id="skills" className="py-[76px] px-5 md:px-7 bg-bg1 bg-deco-skills">
       <div className="max-w-[1280px] mx-auto">
         <SectionReveal>
           <SectionLabel>Skills</SectionLabel>

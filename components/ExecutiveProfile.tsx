@@ -6,7 +6,7 @@ const COLOR_CLASS = ["text-gold", "text-emerald", "text-rust"];
 
 export default function ExecutiveProfile() {
   return (
-    <section id="executive" className="py-[76px] px-5 md:px-7 bg-bg0">
+    <section id="executive" className="py-[76px] px-5 md:px-7 bg-bg0 bg-deco-executive">
       <div className="max-w-[1280px] mx-auto">
         <SectionReveal>
           <SectionLabel>Executive Profile</SectionLabel>

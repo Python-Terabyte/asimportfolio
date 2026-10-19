@@ -1,6 +1,7 @@
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionReveal from "@/components/ui/SectionReveal";
-import { FOUNDER_PILLARS, PRODUCTS } from "@/lib/data";
+import { FOUNDER_FOCUS, PRODUCTS } from "@/lib/data";
 
 const PILLAR_COLOR = ["text-gold", "text-emerald", "text-rust"];
 
@@ -14,26 +15,36 @@ export default function Founder() {
       <div className="relative max-w-[1280px] mx-auto">
         <SectionReveal>
           <SectionLabel>Founder</SectionLabel>
-          <h2 className="font-sora font-extrabold text-[30px] md:text-[46px] text-ivory mb-6 max-w-[760px]">
-            Building what I couldn&apos;t find.
+          <h2 className="font-sora font-extrabold text-[30px] md:text-[46px] text-ivory mb-3 max-w-[760px]">
+            Quasar Technologies
           </h2>
+          <p className="font-sora font-semibold text-lg md:text-xl text-gold mb-6 max-w-[760px]">
+            Building practical software for businesses and everyday users.
+          </p>
+          <p className="font-manrope text-[17px] leading-[1.7] text-ivory-muted max-w-[680px] mb-4">
+            Quasar Technologies is a venture I co-founded to develop software products across business applications
+            and games.
+          </p>
+          <p className="font-manrope text-[17px] leading-[1.7] text-ivory-muted max-w-[680px] mb-4">
+            I lead the business software direction, including product strategy, financial workflows, requirements,
+            and development coordination. My co-founder leads the gaming division.
+          </p>
           <p className="font-manrope text-[17px] leading-[1.7] text-ivory-muted max-w-[680px] mb-8">
-            Beyond consulting, I build my own software through <strong className="text-ivory">Quasar Technologies</strong> —
-            a studio I co-founded spanning business software and games. I lead and build the business suite; my
-            co-founder leads the gaming division.
+            Our business software work focuses on accounting, document automation, reporting, and operational
+            efficiency. We aim to make capable digital tools more accessible to growing businesses.
           </p>
         </SectionReveal>
 
         <SectionReveal delay={0.1}>
           <div className="flex flex-wrap gap-12 mb-12 py-8 border-t border-b border-ivory/[0.08]">
             <div className="flex-1 min-w-0 basis-[300px]">
-              <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-gold mb-2.5">Business Suite — Led by Asim</div>
+              <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-gold mb-2.5">Business Suite - Led by Asim</div>
               <div className="font-manrope text-[15px] leading-relaxed text-ivory-dim">
-                Accounting, automation, and reporting software — BrandFox and Defty.
+                Accounting, document automation, and reporting software - BrandFox and Defty.
               </div>
             </div>
             <div className="flex-1 min-w-0 basis-[300px] pl-12 border-l border-ivory/10">
-              <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-emerald mb-2.5">Games — Led by Co-Founder</div>
+              <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-emerald mb-2.5">Games - Led by Co-Founder</div>
               <div className="font-manrope text-[15px] leading-relaxed text-ivory-dim">
                 Quasar&apos;s game development division, built and led by my co-founder.
               </div>
@@ -42,14 +53,19 @@ export default function Founder() {
         </SectionReveal>
 
         <div className="flex flex-col mb-14">
-          {FOUNDER_PILLARS.map((pillar, i) => (
-            <SectionReveal key={pillar.label} delay={i * 0.05}>
+          <SectionReveal>
+            <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-gold pb-4 border-b border-ivory/[0.07]">
+              Our focus
+            </div>
+          </SectionReveal>
+          {FOUNDER_FOCUS.map((item, i) => (
+            <SectionReveal key={item} delay={i * 0.05}>
               <div className="flex flex-wrap gap-6 py-5 border-b border-ivory/[0.07]">
                 <div className={`flex-none w-[140px] font-mono text-[11px] tracking-[0.14em] uppercase ${PILLAR_COLOR[i % 3]}`}>
-                  {pillar.label}
+                  {String(i + 1).padStart(2, "0")}
                 </div>
                 <div className="flex-1 min-w-0 basis-[320px] font-manrope text-[15px] leading-relaxed text-ivory-dim">
-                  {pillar.text}
+                  {item}
                 </div>
               </div>
             </SectionReveal>
@@ -68,6 +84,21 @@ export default function Founder() {
                     border: `1px solid ${isLive ? "rgba(201,168,118,0.3)" : "rgba(63,165,125,0.3)"}`,
                   }}
                 >
+                  <a
+                    href={product.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mb-6 rounded-xl overflow-hidden border border-ivory/10 shadow-[0_16px_40px_rgba(0,0,0,0.4)]"
+                  >
+                    <Image
+                      src={product.screenshot}
+                      alt={product.screenshotAlt}
+                      width={1568}
+                      height={779}
+                      sizes="(min-width: 768px) 560px, 100vw"
+                      className="w-full h-auto"
+                    />
+                  </a>
                   <div
                     className="inline-flex items-center gap-1.5 font-mono text-[10.5px] tracking-wide uppercase px-3 py-1.5 rounded-full mb-5"
                     style={{ color: isLive ? "#C9A876" : "#3FA57D", border: `1px solid ${isLive ? "#C9A876" : "#3FA57D"}` }}

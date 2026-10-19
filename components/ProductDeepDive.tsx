@@ -4,12 +4,12 @@ import { DEFTY_BARS, DEFTY_CAPABILITIES, DEFTY_KPIS, DEFTY_STACK } from "@/lib/d
 
 export default function ProductDeepDive() {
   return (
-    <section id="product" className="py-[76px] px-5 md:px-7 bg-bg0">
+    <section id="product" className="py-[76px] px-5 md:px-7 bg-bg0 bg-deco-product">
       <div className="max-w-[1280px] mx-auto flex flex-wrap gap-14 items-start">
         <SectionReveal className="flex-1 min-w-0 basis-[420px]">
           <SectionLabel>Flagship Product</SectionLabel>
           <h2 className="font-sora font-bold text-[28px] md:text-[40px] text-ivory mb-5">
-            Defty Books — the accounting engine I wished existed.
+            Defty Books - the accounting engine I wished existed.
           </h2>
           <p className="font-manrope text-base leading-[1.7] text-ivory-muted mb-7">
             A cloud accounting and financial-intelligence platform where every transaction is a balanced

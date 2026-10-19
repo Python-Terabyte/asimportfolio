@@ -2,6 +2,7 @@ export const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Founder", href: "#founder" },
+  { label: "Case Studies", href: "#case-studies" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
@@ -13,10 +14,10 @@ export const COLOR_CYCLE = ["gold", "emerald", "rust"] as const;
 
 export const CONVERGENCE_NODES = [
   { label: "Business", top: "4%", left: "50%" },
-  { label: "Finance", top: "30%", left: "92%" },
-  { label: "Technology", top: "68%", left: "92%" },
+  { label: "Finance", top: "30%", left: "84%" },
+  { label: "Technology", top: "68%", left: "84%" },
   { label: "Data", top: "92%", left: "50%" },
-  { label: "Product", top: "58%", left: "8%" },
+  { label: "Product", top: "58%", left: "16%" },
 ];
 
 export const EXECUTIVE_CARDS = [
@@ -24,7 +25,7 @@ export const EXECUTIVE_CARDS = [
   { mark: "BA", title: "Business Analyst", desc: "BRD / FRD / SRS / PRD authoring, stakeholder workshops, and requirements as engineering source of truth." },
   { mark: "PM", title: "Product Manager", desc: "Designed the Business Health Score and MAX data architecture end-to-end, requirements to production." },
   { mark: "TS", title: "Technology & Accounting Specialist", desc: "Bridges accounting logic and software architecture across QuickBooks, Xero, Zoho, Shopify, and more." },
-  { mark: "CEO", title: "CEO & Director, Quasar Technologies", desc: "Co-founded a studio spanning business software and games. Leads and builds the business suite — BrandFox and Defty — end-to-end." },
+  { mark: "CEO", title: "CEO & Director, Quasar Technologies", desc: "Co-founded a studio spanning business software and games. Leads and builds the business suite - BrandFox and Defty - end-to-end." },
 ];
 
 export const STATS = [
@@ -39,33 +40,32 @@ export const EXPERIENCE = [
     title: "Manager, External Execution",
     company: "Metric HQ",
     companyUrl: "https://metricapp.co",
-    period: "September 2025 – Present",
+    period: "September 2025 to Present",
     bullets: [
-      "Designed the BI infrastructure powering a platform with $4.2B in global transactions across 190+ countries.",
-      "Reduced financial reporting cycle time by 75% through full automation of reporting workflows.",
-      "Defined the core metrics framework across sales, finance, operations, supply chain, and e-commerce for 100+ international clients.",
-      "Serves as Virtual CFO for 16 UAE businesses; supporting CFO for 28 more.",
+      "Lead external execution across business intelligence, financial analysis, and client delivery.",
+      "Developed and improved reporting workflows that reduced reporting time by 75%.",
+      "Defined financial and operational metrics supporting 100+ international clients on a platform with $4.2B in global transactions.",
+      "Support financial decision-making for 44 businesses through virtual CFO and advisory work.",
     ],
   },
   {
     title: "Business Analyst / Product Manager",
     company: "Metric HQ",
     companyUrl: "https://metricapp.co",
-    period: "August 2024 – September 2025",
+    period: "August 2024 to September 2025",
     bullets: [
-      "Designed the Business Health Score, a composite KPI engine aggregating six platforms into a single interpretable score.",
-      "Authored BRDs, FRDs, SRS, and PRDs as the engineering source of truth across all delivery cycles.",
-      "Designed the data architecture for MAX, Metric's AI financial co-pilot.",
+      "Designed the Business Health Score methodology, including KPI weighting, validation, and interpretation.",
+      "Translated business requirements into structured product and engineering documentation.",
+      "Contributed to the data architecture supporting MAX, the platform's AI-assisted financial intelligence experience.",
     ],
   },
   {
     title: "Accounts Analyst",
     company: "Metric HQ",
     companyUrl: "https://metricapp.co",
-    period: "July 2022 – August 2024",
+    period: "July 2022 to August 2024",
     bullets: [
-      "Analyzed financial data for 45+ businesses across Pakistan, GCC, and Australia.",
-      "Delivered monthly reporting packages with variance analysis and anomaly flagging.",
+      "Analyzed financial data for 45+ businesses across Pakistan, GCC, and Australia, delivering monthly reporting with variance analysis and anomaly flagging.",
       "Devised the Excel formulas and financial logic underpinning Metric's core dashboard.",
     ],
   },
@@ -73,30 +73,27 @@ export const EXPERIENCE = [
     title: "Finance Officer",
     company: "Jovi Technologies",
     companyUrl: null,
-    period: "January 2022 – July 2022",
+    period: "January 2022 to July 2022",
     bullets: [
       "Managed financial records, reconciliations, and internal reporting for a 500+ employee startup.",
-      "Ensured cross-department financial coordination in a high-growth environment.",
     ],
   },
   {
     title: "Tax, Audit and Compliance Intern",
     company: "AET Co., Islamabad",
     companyUrl: null,
-    period: "January 2021 – October 2021",
+    period: "January 2021 to October 2021",
     bullets: [
       "Supported audit engagements and regulatory compliance reporting.",
-      "Built foundational expertise in financial accuracy and documentation standards.",
     ],
   },
 ];
 
-export const FOUNDER_PILLARS = [
-  { label: "Vision", text: "A world where small businesses get enterprise-grade financial intelligence without enterprise cost." },
-  { label: "Problem", text: "Most SMEs run on spreadsheets or software that wasn't built for how they actually operate." },
-  { label: "Solution", text: "Products that fuse real accounting logic with modern software architecture, built by someone who has done both." },
-  { label: "Technology", text: "Cloud-native ledgers, automation-first workflows, and AI-assisted reporting." },
-  { label: "Future", text: "An ecosystem spanning accounting, automation, data, and business intelligence under one roof." },
+export const FOUNDER_FOCUS = [
+  "Build products around real user and business needs.",
+  "Design reliable workflows and maintainable systems.",
+  "Combine financial domain knowledge with modern software development.",
+  "Grow through useful products, transparent communication, and continuous improvement.",
 ];
 
 export const PRODUCTS = [
@@ -109,6 +106,8 @@ export const PRODUCTS = [
     status: "live" as const,
     url: "https://bfox.pro",
     cta: "Visit bfox.pro",
+    screenshot: "/brandfox.jpg",
+    screenshotAlt: "BrandFox homepage at bfox.pro",
   },
   {
     name: "Defty Books",
@@ -119,6 +118,8 @@ export const PRODUCTS = [
     status: "live" as const,
     url: "https://deftysolutions.com",
     cta: "Visit deftysolutions.com",
+    screenshot: "/defty.jpg",
+    screenshotAlt: "Defty Solutions homepage at deftysolutions.com",
   },
 ];
 
@@ -141,6 +142,49 @@ export const DEFTY_KPIS = [
 ];
 
 export const DEFTY_BARS = [0.4, 0.6, 0.5, 0.8, 0.65, 0.9, 0.55, 0.75, 0.85, 0.6, 0.7, 0.95];
+
+export const CASE_STUDIES = [
+  {
+    name: "BrandFox",
+    kicker: "Case study · Document automation",
+    role: "Product strategy, requirements, development coordination",
+    url: "https://bfox.pro",
+    screenshot: "/brandfox.jpg",
+    screenshotAlt: "BrandFox homepage at bfox.pro",
+    problem:
+      "Job seekers and small businesses pay for subscriptions or fight with generic word processors just to produce a professional, ATS-friendly resume or a clean financial report.",
+    approach: [
+      "Built one platform with two focused engines: an AI-assisted resume builder and a generator for business reports, financial statements, and investor decks.",
+      "Made the product free with no watermark on PDF export, so the first document is useful without a sign-up wall.",
+      "Structured document templates so output stays consistent and presentable without design skills.",
+    ],
+    outcome: [
+      "Live at bfox.pro with two document builders.",
+      "No subscription, no credit card, and no watermarks.",
+    ],
+    stack: ["AI Resume Builder", "Report Generation", "Document Automation"],
+  },
+  {
+    name: "Defty Books",
+    kicker: "Case study · Cloud accounting",
+    role: "Product strategy, financial workflows, requirements, development coordination",
+    url: "https://deftysolutions.com",
+    screenshot: "/defty.jpg",
+    screenshotAlt: "Defty Solutions homepage at deftysolutions.com",
+    problem:
+      "Growing businesses often run on spreadsheets or software that was not built around how they actually operate, which leaves books that are slow to close and hard to trust across currencies and tax regimes.",
+    approach: [
+      "Modelled every transaction as a balanced double-entry journal, so invoices, bills, expenses, credit notes, and journals all land in one ledger.",
+      "Added bank reconciliation with score-based match suggestions, multi-currency with live rates, and a tax engine covering VAT/GST for 22 jurisdictions.",
+      "Built reporting on top of the ledger: P&L, balance sheet, cash flow, and a custom-metric formula engine, plus QuickBooks Online import and sync.",
+    ],
+    outcome: [
+      "Live and used by 30 businesses.",
+      "Multi-tenant platform built with React, NestJS, and PostgreSQL.",
+    ],
+    stack: DEFTY_STACK,
+  },
+];
 
 export const SKILL_GROUPS = [
   { name: "BI & Analytics", items: ["Excel (Expert)", "Power BI", "Tableau", "Dashboard Architecture", "KPI Design", "Real-time Reporting"] },

@@ -1,4 +1,4 @@
-# Muhammad Asim Saleem — Portfolio
+# Muhammad Asim Saleem - Portfolio
 
 Personal portfolio site for Muhammad Asim Saleem, BI Architect and Fintech Consultant. Built with Next.js (App Router), TypeScript, and Tailwind CSS, with Framer Motion animations and a Resend-powered contact form.
 
@@ -53,7 +53,7 @@ lib/
 public/                   # Static assets, screenshots
 ```
 
-Site content (experience, skills, projects, services, stats, social links) is centralized in `lib/data.ts` — edit that file to update copy without touching components.
+Site content (experience, skills, projects, services, stats, social links) is centralized in `lib/data.ts` - edit that file to update copy without touching components.
 
 ## Available Scripts
 

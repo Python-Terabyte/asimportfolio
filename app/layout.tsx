@@ -24,14 +24,14 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Asim Saleem, ACMA — CEO & Founder",
+  title: "Muhammad Asim Saleem, ACMA - CEO & Founder",
   description:
     "CEO & Director of Quasar Technologies and Manager, External Execution at a fintech platform active in 190+ countries. ACMA-qualified operator building businesses, products, and financial technology.",
   keywords:
     "Muhammad Asim Saleem, ACMA, CEO, Founder, Quasar Technologies, Fintech, BI Architecture, Virtual CFO, Business Analyst, Product Manager, Defty Books, BrandFox",
   authors: [{ name: "Muhammad Asim Saleem" }],
   openGraph: {
-    title: "Muhammad Asim Saleem, ACMA — CEO & Founder",
+    title: "Muhammad Asim Saleem, ACMA - CEO & Founder",
     description:
       "I build businesses, products, and financial technology that turn complex problems into simple systems.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Asim Saleem, ACMA — CEO & Founder",
+    title: "Muhammad Asim Saleem, ACMA - CEO & Founder",
     description:
       "I build businesses, products, and financial technology that turn complex problems into simple systems.",
   },

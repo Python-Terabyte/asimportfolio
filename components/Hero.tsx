@@ -47,20 +47,20 @@ export default function Hero() {
             className="font-sora font-extrabold text-[38px] md:text-5xl lg:text-[64px] leading-[1.05] tracking-[-0.01em] text-ivory mb-5 animate-fadeUp"
             style={{ animationDelay: "0.08s" }}
           >
-            Muhammad Asim Saleem<span className="text-gold">,</span> ACMA
+            Building Better Businesses Through Finance<span className="text-gold">,</span> Data &amp; Technology<span className="text-gold">.</span>
           </h1>
 
           <p
-            className="font-manrope font-medium text-[17px] md:text-xl leading-relaxed text-ivory-dim max-w-[560px] mb-2.5 animate-fadeUp"
+            className="font-manrope font-medium text-[17px] md:text-xl leading-relaxed text-ivory-dim max-w-[560px] mb-4 animate-fadeUp"
             style={{ animationDelay: "0.16s" }}
           >
-            I build businesses, products, and financial technology that turn complex problems into simple systems.
+            I&apos;m Muhammad Asim Saleem, ACMA — a finance and technology professional working at the intersection of business analysis, fintech product leadership, and software entrepreneurship.
           </p>
           <p
-            className="font-mono text-[12.5px] tracking-wide text-ivory-faint mb-6 animate-fadeUp"
+            className="font-manrope text-[15px] md:text-base leading-relaxed text-ivory-faint max-w-[560px] mb-6 animate-fadeUp"
             style={{ animationDelay: "0.2s" }}
           >
-            CEO &amp; Director, Quasar Technologies
+            I translate complex financial and operational problems into practical systems, data-driven decisions, and scalable digital products. Alongside my professional work, I&apos;m building software products through Quasar Technologies.
           </p>
 
           <div className="flex flex-wrap gap-2.5 mb-9 animate-fadeUp" style={{ animationDelay: "0.26s" }}>
@@ -79,13 +79,13 @@ export default function Hero() {
               href="#product"
               className="font-sora font-bold text-[13px] tracking-wide uppercase text-bg0 bg-gold px-[30px] py-4 rounded-full whitespace-nowrap hover:bg-gold-light transition-colors"
             >
-              Explore My Work
+              Explore Selected Work
             </a>
             <a
-              href="#contact"
+              href="#founder"
               className="font-sora font-semibold text-[13px] tracking-wide uppercase text-ivory border border-ivory/20 px-[30px] py-4 rounded-full whitespace-nowrap hover:border-gold hover:text-gold transition-colors"
             >
-              Let&apos;s Connect
+              Meet the Founder
             </a>
           </div>
         </div>

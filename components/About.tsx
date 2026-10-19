@@ -7,37 +7,45 @@ const COLOR_CLASS: Record<string, string> = { gold: "border-gold", emerald: "bor
 const cycle = ["gold", "emerald", "rust"];
 const lineEndpoints = [
   { x: 210, y: 40 },
-  { x: 380, y: 140 },
-  { x: 380, y: 300 },
+  { x: 353, y: 140 },
+  { x: 353, y: 300 },
   { x: 210, y: 390 },
-  { x: 40, y: 260 },
+  { x: 67, y: 260 },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="relative py-[76px] px-5 md:px-7 bg-bg1">
+    <section id="about" className="relative py-[76px] px-5 md:px-7 bg-bg1 bg-deco-about">
       <div className="max-w-[1280px] mx-auto flex flex-wrap gap-16 items-center">
         <SectionReveal className="flex-1 min-w-0 basis-[440px]">
           <SectionLabel>About</SectionLabel>
           <h2 className="font-sora font-bold text-[28px] md:text-[42px] leading-[1.15] text-ivory mb-6">
-            Business, finance, technology, data &amp; product — converging into one operator.
+            About Asim
           </h2>
           <div className="space-y-4 font-manrope text-[17px] leading-[1.7] text-ivory-muted max-w-[560px]">
             <p>
-              I joined Metric HQ in 2022 as an accounts analyst. Within two years I was designing the BI
-              infrastructure those reports depended on — not because I was promoted into it, but because I
-              kept building what wasn&apos;t there yet.
+              My career began in finance, where I developed a foundation in accounting, financial reporting, and
+              business performance. Over time, my work expanded into business analysis, product management, data
+              architecture, and financial technology.
             </p>
             <p>
-              Today I lead as Manager, External Execution at a fintech platform active in 190+ countries,
-              trusted by 200,000+ businesses, processing $4.2B in transactions. ACMA-qualified from ICMAP, I
-              understand what numbers mean, why they move, and what decisions they should drive — financial
-              depth paired with systems thinking.
+              As an ACMA-qualified professional, I bring financial discipline to technology decisions. I work to
+              understand the business problem first, translate it into clear requirements, and help shape systems
+              that make information more reliable and decisions more useful.
             </p>
             <p>
-              Alongside that, I&apos;m CEO &amp; Director of Quasar Technologies, a studio I co-founded that
-              builds both business software and games. I lead and build the business suite; my co-founder
-              leads the gaming division.
+              At Metric HQ, my experience spans financial analysis, business intelligence, product design, and
+              execution leadership. My work includes financial reporting automation, business performance metrics,
+              and the data architecture behind financial intelligence products.
+            </p>
+            <p>
+              Outside my professional role, I&apos;m building Quasar Technologies with a co-founder. We are
+              developing software products across business applications and games, with a focus on solving
+              practical problems through thoughtful engineering and product design.
+            </p>
+            <p className="text-ivory">
+              <strong className="text-gold">My approach:</strong> understand the numbers, challenge the
+              assumptions, build the system, and measure the outcome.
             </p>
           </div>
         </SectionReveal>
@@ -49,7 +57,7 @@ export default function About() {
               return (
                 <div
                   key={node.label}
-                  className={`absolute -translate-x-1/2 -translate-y-1/2 w-32 px-2.5 py-3.5 text-center rounded-2xl bg-bg3 border ${COLOR_CLASS[color]}`}
+                  className={`absolute -translate-x-1/2 -translate-y-1/2 w-28 sm:w-32 px-2.5 py-3.5 text-center rounded-2xl bg-bg3 border ${COLOR_CLASS[color]}`}
                   style={{ top: node.top, left: node.left, boxShadow: `0 12px 28px rgba(0,0,0,0.35), 0 0 20px ${COLOR_HEX[color]}22` }}
                 >
                   <div className="font-sora font-semibold text-[13px] text-ivory">{node.label}</div>

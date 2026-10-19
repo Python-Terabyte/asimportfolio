@@ -4,7 +4,7 @@ import { EXPERIENCE } from "@/lib/data";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-[76px] px-5 md:px-7 bg-bg0">
+    <section id="experience" className="py-[76px] px-5 md:px-7 bg-bg0 bg-deco-experience">
       <div className="max-w-[1080px] mx-auto">
         <SectionReveal>
           <SectionLabel>Experience</SectionLabel>

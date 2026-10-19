@@ -57,7 +57,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-[76px] px-5 md:px-7 bg-bg1">
+    <section id="contact" className="py-[76px] px-5 md:px-7 bg-bg1 bg-deco-contact">
       <div className="max-w-[1280px] mx-auto flex flex-wrap gap-14">
         <div className="flex-1 min-w-0 basis-[420px]">
           <SectionReveal>
