@@ -1,15 +1,23 @@
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionReveal from "@/components/ui/SectionReveal";
 
 export default function Philosophy() {
   return (
-    <section className="py-[76px] px-5 md:px-7 bg-bg0 bg-deco-philosophy text-center">
-      <div className="max-w-[820px] mx-auto">
+    <section className="py-10 md:py-14 px-5 md:px-7 bg-bg0 bg-deco-philosophy text-center relative overflow-hidden">
+      <Image
+        src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1600&q=60"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover opacity-[0.12] grayscale"
+      />
+      <div className="relative max-w-[820px] mx-auto">
         <SectionReveal>
           <SectionLabel>Beyond the Job Title</SectionLabel>
         </SectionReveal>
         <SectionReveal delay={0.08}>
-          <p className="font-sora font-bold text-[28px] md:text-[44px] leading-[1.3] text-ivory mb-8">
+          <p className="font-sora font-bold text-[28px] md:text-[44px] leading-[1.3] text-ivory mb-5">
             &ldquo;Build systems that make complexity disappear.&rdquo;
           </p>
         </SectionReveal>

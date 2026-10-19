@@ -4,14 +4,14 @@ import { DEFTY_BARS, DEFTY_CAPABILITIES, DEFTY_KPIS, DEFTY_STACK } from "@/lib/d
 
 export default function ProductDeepDive() {
   return (
-    <section id="product" className="py-[76px] px-5 md:px-7 bg-bg0 bg-deco-product">
-      <div className="max-w-[1280px] mx-auto flex flex-wrap gap-14 items-start">
+    <section id="product" className="py-10 md:py-14 px-5 md:px-7 bg-bg0 bg-deco-product">
+      <div className="max-w-[1280px] mx-auto flex flex-wrap gap-8 items-start">
         <SectionReveal className="flex-1 min-w-0 basis-[420px]">
           <SectionLabel>Flagship Product</SectionLabel>
-          <h2 className="font-sora font-bold text-[28px] md:text-[40px] text-ivory mb-5">
+          <h2 className="font-sora font-bold text-[28px] md:text-[40px] text-ivory mb-3">
             Defty Books - the accounting engine I wished existed.
           </h2>
-          <p className="font-manrope text-base leading-[1.7] text-ivory-muted mb-7">
+          <p className="font-manrope text-base leading-[1.7] text-ivory-muted mb-4">
             A cloud accounting and financial-intelligence platform where every transaction is a balanced
             double-entry journal. Multi-company workspaces, multi-currency support and a built-in tax engine,
             live at{" "}
@@ -25,9 +25,9 @@ export default function ProductDeepDive() {
             </a>{" "}
             and used by 30 businesses.
           </p>
-          <div className="flex flex-col gap-3.5">
+          <div className="flex flex-col gap-1">
             {DEFTY_CAPABILITIES.map((cap) => (
-              <div key={cap} className="flex items-center gap-3 py-3 border-b border-ivory/[0.06]">
+              <div key={cap} className="flex items-center gap-3 py-2 border-b border-ivory/[0.06]">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
                 <span className="font-manrope text-[14.5px] text-ivory-dim">{cap}</span>
               </div>

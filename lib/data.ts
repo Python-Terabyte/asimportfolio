@@ -106,8 +106,6 @@ export const PRODUCTS = [
     status: "live" as const,
     url: "https://bfox.pro",
     cta: "Visit bfox.pro",
-    screenshot: "/brandfox.jpg",
-    screenshotAlt: "BrandFox homepage at bfox.pro",
   },
   {
     name: "Defty Books",
@@ -118,8 +116,6 @@ export const PRODUCTS = [
     status: "live" as const,
     url: "https://deftysolutions.com",
     cta: "Visit deftysolutions.com",
-    screenshot: "/defty.jpg",
-    screenshotAlt: "Defty Solutions homepage at deftysolutions.com",
   },
 ];
 

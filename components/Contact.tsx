@@ -57,21 +57,21 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-[76px] px-5 md:px-7 bg-bg1 bg-deco-contact">
-      <div className="max-w-[1280px] mx-auto flex flex-wrap gap-14">
+    <section id="contact" className="py-10 md:py-14 px-5 md:px-7 bg-bg1 bg-deco-contact">
+      <div className="max-w-[1280px] mx-auto flex flex-wrap gap-8 flex-row-reverse">
         <div className="flex-1 min-w-0 basis-[420px]">
           <SectionReveal>
             <SectionLabel>Contact</SectionLabel>
-            <h2 className="font-sora font-extrabold text-[30px] md:text-[46px] text-ivory mb-[18px]">
+            <h2 className="font-sora font-extrabold text-[30px] md:text-[46px] text-ivory mb-3">
               Have a problem worth solving?
             </h2>
-            <p className="font-manrope text-[17px] leading-relaxed text-ivory-muted mb-8">
+            <p className="font-manrope text-[17px] leading-relaxed text-ivory-muted mb-5">
               Let&apos;s build something meaningful.
             </p>
           </SectionReveal>
 
           <SectionReveal delay={0.08}>
-            <div className="flex flex-col gap-3.5 mb-7">
+            <div className="flex flex-col gap-3.5 mb-4">
               <a href="mailto:asimsaleem.net@gmail.com" className="font-manrope text-[15px] text-ivory-dim flex items-center gap-2.5 hover:text-gold transition-colors">
                 <span className="text-gold">✉</span>asimsaleem.net@gmail.com
               </a>
@@ -122,7 +122,7 @@ export default function Contact() {
               )}
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="flex flex-col gap-4 p-[30px] rounded-[18px] bg-bg2 border border-ivory/[0.08]">
+            <form onSubmit={onSubmit} className="flex flex-col gap-4 p-6 rounded-[18px] bg-bg2 border border-ivory/[0.08]">
               <div>
                 <label className="font-mono text-[10.5px] tracking-wide uppercase text-ivory-ghost block mb-2">Name</label>
                 <input

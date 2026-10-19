@@ -29,14 +29,14 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-bg0 pt-[140px] pb-20 px-5 md:px-7"
+      className="relative min-h-[88vh] flex items-center overflow-hidden bg-bg0 pt-[110px] pb-12 px-5 md:px-7"
       style={{ background: "radial-gradient(ellipse 80% 60% at 70% 20%, rgba(201,168,118,0.08), transparent), #020202" }}
     >
       <div className="absolute inset-0 hero-grid pointer-events-none" />
 
-      <div className="relative z-[2] max-w-[1280px] mx-auto w-full flex flex-wrap gap-16 items-center">
+      <div className="relative z-[2] max-w-[1280px] mx-auto w-full flex flex-wrap gap-10 items-center">
         <div className="flex-1 min-w-0 basis-[480px]">
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-gold/35 bg-gold/[0.06] mb-7 max-w-full animate-fadeUp">
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-gold/35 bg-gold/[0.06] mb-5 max-w-full animate-fadeUp">
             <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 pulse-dot" />
             <span className="font-mono text-[9.5px] md:text-[11px] tracking-[0.1em] uppercase text-gold whitespace-nowrap">
               CEO &amp; Founder · Advisory Open

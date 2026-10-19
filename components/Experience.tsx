@@ -1,27 +1,29 @@
+import Photo from "@/components/ui/Photo";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionReveal from "@/components/ui/SectionReveal";
 import { EXPERIENCE } from "@/lib/data";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-[76px] px-5 md:px-7 bg-bg0 bg-deco-experience">
-      <div className="max-w-[1080px] mx-auto">
+    <section id="experience" className="py-10 md:py-14 px-5 md:px-7 bg-bg0 bg-deco-experience">
+      <div className="max-w-[1280px] mx-auto flex flex-wrap gap-8 items-start">
+        <div className="flex-1 min-w-0 basis-[440px]">
         <SectionReveal>
           <SectionLabel>Experience</SectionLabel>
-          <h2 className="font-sora font-bold text-[28px] md:text-[42px] text-ivory mb-12">
+          <h2 className="font-sora font-bold text-[28px] md:text-[42px] text-ivory mb-6">
             Accounting → Analysis → Product → Leadership.
           </h2>
         </SectionReveal>
 
         <div className="relative pl-7 border-l border-ivory/10">
           {EXPERIENCE.map((role, i) => (
-            <SectionReveal key={`${role.company}-${role.period}`} delay={i * 0.06} className="relative mb-11">
+            <SectionReveal key={`${role.company}-${role.period}`} delay={i * 0.06} className="relative mb-6">
               <span
                 className="absolute -left-[33px] top-1.5 w-[9px] h-[9px] rounded-full bg-gold"
                 style={{ boxShadow: "0 0 0 4px rgba(201,168,118,0.15)" }}
               />
               <div className="font-mono text-[11px] text-ivory-ghost tracking-wide mb-2">{role.period}</div>
-              <div className="flex flex-wrap items-baseline gap-2.5 mb-3">
+              <div className="flex flex-wrap items-baseline gap-2.5 mb-2">
                 <h3 className="font-sora font-bold text-[19px] text-ivory">{role.title}</h3>
                 {role.companyUrl ? (
                   <a
@@ -47,6 +49,10 @@ export default function Experience() {
             </SectionReveal>
           ))}
         </div>
+        </div>
+        <SectionReveal delay={0.1} className="flex-1 min-w-0 basis-[320px] md:sticky md:top-24">
+          <Photo id="1554224155-6726b3ff858f" alt="Tax forms, calculator and phone on a desk" className="aspect-[4/5]" />
+        </SectionReveal>
       </div>
     </section>
   );

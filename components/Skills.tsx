@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Photo from "@/components/ui/Photo";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionReveal from "@/components/ui/SectionReveal";
 import { SKILL_GROUPS } from "@/lib/data";
@@ -12,17 +13,21 @@ export default function Skills() {
   const activeColor = COLOR_CYCLE[active % COLOR_CYCLE.length];
 
   return (
-    <section id="skills" className="py-[76px] px-5 md:px-7 bg-bg1 bg-deco-skills">
-      <div className="max-w-[1280px] mx-auto">
+    <section id="skills" className="py-10 md:py-14 px-5 md:px-7 bg-bg1 bg-deco-skills">
+      <div className="max-w-[1280px] mx-auto flex flex-wrap gap-8 items-center">
+        <SectionReveal className="flex-1 min-w-0 basis-[320px]">
+          <Photo id="1460925895917-afdab827c52f" alt="Laptop showing an analytics dashboard" className="aspect-[4/5]" />
+        </SectionReveal>
+        <div className="flex-1 min-w-0 basis-[440px]">
         <SectionReveal>
           <SectionLabel>Skills</SectionLabel>
-          <h2 className="font-sora font-bold text-[28px] md:text-[42px] text-ivory mb-10 max-w-[680px]">
+          <h2 className="font-sora font-bold text-[28px] md:text-[42px] text-ivory mb-5 max-w-[680px]">
             A stack that spans the balance sheet and the codebase.
           </h2>
         </SectionReveal>
 
         <SectionReveal delay={0.1}>
-          <div className="flex flex-wrap gap-2.5 mb-8">
+          <div className="flex flex-wrap gap-2.5 mb-4">
             {SKILL_GROUPS.map((grp, i) => {
               const isActive = i === active;
               const col = COLOR_CYCLE[i % COLOR_CYCLE.length];
@@ -46,8 +51,8 @@ export default function Skills() {
 
         <SectionReveal delay={0.15}>
           <div
-            className="grid gap-3 content-start p-8 rounded-[20px] bg-bg2"
-            style={{ border: `1px solid ${activeColor}44`, gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))" }}
+            className="grid gap-3 content-start p-5 rounded-[20px] bg-bg2"
+            style={{ border: `1px solid ${activeColor}44`, gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))" }}
           >
             {SKILL_GROUPS[active].items.map((item) => (
               <span
@@ -60,6 +65,7 @@ export default function Skills() {
             ))}
           </div>
         </SectionReveal>
+        </div>
       </div>
     </section>
   );
